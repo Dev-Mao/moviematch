@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% block title %}Inicio · MovieMatch{% endblock %}
+{% block page_title %}Hola, {{ user.first_name|default:user.username }}{% endblock %}
+{% block page_subtitle %}Esto es lo que te recomendamos hoy{% endblock %}
+
+{% block topbar_actions %}
+  <form class="search" action="{% url 'catalog:catalogo' %}" method="get" style="width:280px">
+    <span>🔍</span>
+    <input type="search" name="q" placeholder="Buscar películas, series…">
+  </form>
+  <form method="post" action="{% url 'recommendations:actualizar' %}">
+    {% csrf_token %}
+    <button class="btn btn--outline btn--sm" type="submit" title="Volver a calcular tus recomendaciones">
+      ↻ Actualizar
+    </button>
+  </form>
+{% endblock %}
+
+{% block content %}
+
+  {% if destacada %}
+    <section class="card" style="padding:0;overflow:hidden;position:relative">
+      {% if destacada.contenido.poster_url %}
+        <div style="position:absolute;inset:0;
+                    background-image:url('{{ destacada.contenido.poster_url }}');
+                    background-size:cover;background-position:center;opacity:.35"></div>
+        <div style="position:absolute;inset:0;
+                    background:linear-gradient(90deg,var(--card) 30%,rgba(23,28,38,.35))"></div>
+      {% endif %}
+      <div style="position:relative;padding:32px;display:flex;flex-direction:column;gap:12px;min-height:280px;justify-content:flex-end">
+        <span class="badge" style="background:var(--primary);color:#fff;align-self:flex-start">
+          ✨ {{ destacada.motivo }}
+        </span>
+        <h2 style="font-size:40px;font-weight:700">{{ destacada.contenido.titulo }}</h2>
+        <div class="row">
+          <span class="muted">
+            {{ destacada.contenido.anio_estreno }} ·
+            {% for genero in destacada.contenido.generos.all|slice:":2" %}{{ genero.nombre }}{% if not forloop.last %}, {% endif %}{% endfor %}
+          </span>
+          {% if destacada.contenido.promedio_valoraciones %}
+            <span class="stars">★</span>
+            <strong>{{ destacada.contenido.promedio_valoraciones }}</strong>
+          {% endif %}
+        </div>
+        <div class="row">
+          <a class="btn btn--primary" href="{% url 'catalog:detalle' destacada.contenido.id %}">Ver ficha</a>
+          <a class="btn btn--outline" href="{% url 'catalog:detalle' destacada.contenido.id %}#valorar">★ Valorar</a>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  {% if sin_datos %}
+    <div class="empty">
+      <div class="empty__icon">🎬</div>
+      <div class="empty__title">Todavía no tenemos recomendaciones para ti</div>
+      <p>Valora algunas películas o elige tus géneros favoritos para empezar.</p>
+      <div class="row" style="justify-content:center;margin-top:16px">
+        <a class="btn btn--primary" href="{% url 'catalog:catalogo' %}">Explorar catálogo</a>
+        <a class="btn btn--outline" href="{% url 'accounts:perfil' %}">Elegir géneros</a>
+      </div>
+    </div>
+  {% endif %}
+
+  {% if para_ti %}
+    <section class="col">
+      <div class="row row--between">
+        <h2 class="section-title">Recomendado para ti</h2>
+        <a href="{% url 'catalog:catalogo' %}" class="small">Ver todo</a>
+      </div>
+      <div class="grid grid--posters">
+        {% for r in para_ti %}
+          {% include "partials/poster.html" with contenido=r.contenido meta=r.motivo puntaje=r.contenido.promedio_valoraciones %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if de_amigos %}
+    <section class="col">
+      <div class="row row--between">
+        <h2 class="section-title">Lo que ven tus amigos</h2>
+        <a href="{% url 'ratings:actividad' %}" class="small">Ver actividad</a>
+      </div>
+      <div class="grid grid--posters">
+        {% for r in de_amigos %}
+          {% include "partials/poster.html" with contenido=r.contenido meta=r.motivo puntaje=r.contenido.promedio_valoraciones %}
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if actividad %}
+    <section class="col">
+      <h2 class="section-title">Actividad reciente</h2>
+      <div class="card">
+        {% for v in actividad %}
+          <div class="row" style="padding:10px 0;{% if not forloop.last %}border-bottom:1px solid var(--border){% endif %}">
+            <div class="avatar avatar--sm">{{ v.usuario.perfil.iniciales }}</div>
+            <div class="grow">
+              <strong>{{ v.usuario.get_full_name }}</strong>
+              <span class="muted">valoró</span>
+              <a href="{% url 'catalog:detalle' v.contenido.id %}">{{ v.contenido.titulo }}</a>
+            </div>
+            <span class="stars">{% for i in v.estrellas %}{% if i %}★{% else %}<span class="stars--off">★</span>{% endif %}{% endfor %}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+{% endblock %}
