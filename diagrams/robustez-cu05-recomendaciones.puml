@@ -1,0 +1,30 @@
+@startuml robustez-cu05
+title Diagrama de robustez - CU-05 Recibir recomendaciones personalizadas
+left to right direction
+skinparam shadowing false
+
+actor "Usuario" as U
+actor "Motor de\nRecomendaciones" as M << sistema >>
+
+boundary "Home /\nrecomendaciones" as PH
+control "vista home" as VH
+control "MotorDeRecomendaciones\n.generar()" as MG
+entity "Preferencia" as EP
+entity "Valoración" as EV
+entity "Amistad" as EA
+entity "ContenidoAudiovisual" as EC
+entity "Recomendación" as ER
+
+U --> PH : abre el inicio
+PH --> VH : solicita recomendaciones
+VH --> ER : ¿hay recomendaciones vigentes?
+VH --> MG : si no, genera
+MG --> M : ejecuta algoritmo híbrido
+MG --> EP : lee géneros preferidos (RN-04)
+MG --> EV : lee historial e (RN-07) valoraciones de amigos
+MG --> EA : filtra amistades aceptadas (RN-07)
+MG --> EC : excluye retirados y ya valorados (RN-08, RN-13)
+MG --> ER : persiste recomendaciones con motivo
+VH --> PH : muestra destacado y filas (< 2 s)
+
+@enduml

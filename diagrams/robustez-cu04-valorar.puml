@@ -1,0 +1,24 @@
+@startuml robustez-cu04
+title Diagrama de robustez - CU-04 Valorar película o serie
+left to right direction
+skinparam shadowing false
+
+actor "Usuario" as U
+
+boundary "Ficha de\ncontenido" as FC
+control "vista valorar" as VV
+control "MotorDeRecomendaciones\n(marcar recálculo)" as MR
+entity "ContenidoAudiovisual" as EC
+entity "Valoración" as EV
+entity "Recomendación" as ER
+
+U --> FC : elige puntuación (1-5) y comentario
+FC --> VV : envía valoración
+VV --> EC : verifica publicado (FE-02)
+VV --> VV : valida rango 1-5 (RN-05, FE-01)
+VV --> EV : crea o actualiza (RN-06)
+VV --> ER : elimina recomendaciones vigentes
+VV --> MR : dispara recálculo
+VV --> FC : confirma y muestra la valoración
+
+@enduml

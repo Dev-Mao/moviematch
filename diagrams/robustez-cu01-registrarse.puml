@@ -1,0 +1,28 @@
+@startuml robustez-cu01
+title Diagrama de robustez - CU-01 Registrarse
+left to right direction
+skinparam shadowing false
+skinparam packageStyle rectangle
+
+actor "Usuario\n(visitante)" as U
+
+boundary "Pantalla de\nregistro" as PR
+control "RegistroForm\n(validar datos)" as VF
+control "vista registro\n(crear cuenta)" as VR
+control "login\n(iniciar sesión)" as LG
+entity "Usuario" as EU
+entity "Perfil" as EP
+boundary "Pantalla de\nperfil" as PP
+
+U --> PR : completa el formulario
+PR --> VF : envía datos
+VF --> EU : verifica correo único (RN-01)
+VF --> EP : verifica alias único (RN-02)
+VF --> PR : muestra errores (FE-01, FE-02)
+VF --> VR : datos válidos
+VR --> EU : crea usuario
+VR --> EP : crea perfil (estado ACTIVO)
+VR --> LG : autentica
+LG --> PP : redirige a elegir géneros
+
+@enduml

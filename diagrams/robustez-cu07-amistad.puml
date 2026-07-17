@@ -1,0 +1,29 @@
+@startuml robustez-cu07
+title Diagrama de robustez - CU-07 Gestionar solicitudes de amistad
+left to right direction
+skinparam shadowing false
+
+actor "Usuario" as U
+actor "Otro usuario\n(destinatario)" as D
+
+boundary "Pantalla de\namigos" as PA
+control "vista amigos\n(buscar)" as VA
+control "enviar_solicitud" as ES
+control "responder_solicitud" as RS
+entity "Usuario" as EU
+entity "Amistad" as EA
+entity "Recomendación" as ER
+
+U --> PA : busca usuarios / abre solicitudes
+PA --> VA : consulta
+VA --> EU : filtra usuarios no relacionados
+PA --> ES : envía solicitud
+ES --> EA : verifica que no exista (RN-09, FE-01)
+ES --> EA : crea amistad PENDIENTE
+D --> PA : ve la solicitud recibida
+PA --> RS : acepta o rechaza
+RS --> EA : cambia estado (ACEPTADA / RECHAZADA)
+RS --> ER : si acepta, marca recálculo (RN-07)
+RS --> PA : actualiza la lista de amigos
+
+@enduml

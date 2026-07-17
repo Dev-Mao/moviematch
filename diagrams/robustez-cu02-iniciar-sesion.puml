@@ -1,0 +1,28 @@
+@startuml robustez-cu02
+title Diagrama de robustez - CU-02 Iniciar sesión
+left to right direction
+skinparam shadowing false
+
+actor "Usuario" as U
+
+boundary "Pantalla de\nlogin" as PL
+control "AccesoView\n(control de intentos)" as AV
+control "LoginForm\n(autenticar)" as LF
+control "cache de intentos\n(RN-03)" as CI
+entity "Usuario" as EU
+entity "Perfil" as EP
+boundary "Home /\nrecomendaciones" as PH
+
+U --> PL : ingresa credenciales
+PL --> AV : envía datos
+AV --> CI : ¿bloqueado por intentos?
+CI --> PL : bloqueo temporal (FE-03)
+AV --> LF : valida credenciales
+LF --> EU : autentica (alias o correo)
+LF --> EP : verifica estado ACTIVO (FE-02)
+LF --> PL : credenciales inválidas (FE-01)
+LF --> CI : registra intento fallido
+AV --> CI : limpia intentos al acertar
+AV --> PH : crea sesión y redirige
+
+@enduml
