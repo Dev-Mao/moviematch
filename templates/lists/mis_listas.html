@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}Mis listas · MovieMatch{% endblock %}
+{% block page_title %}Mis listas{% endblock %}
+{% block page_subtitle %}Crea colecciones y compártelas con tus amigos{% endblock %}
+
+{% block topbar_actions %}
+  <a class="btn btn--primary btn--sm" href="{% url 'lists:crear_lista' %}">+ Crear lista</a>
+{% endblock %}
+
+{% block content %}
+
+  <section class="col">
+    <h2 class="section-title">Tus listas · {{ propias|length }}</h2>
+    {% if propias %}
+      <div class="grid grid--cards">
+        {% for lista in propias %}
+          <a class="card col" href="{% url 'lists:detalle_lista' lista.id %}" style="color:inherit;gap:10px">
+            <div class="row" style="gap:6px;height:90px">
+              {% for contenido in lista.contenidos.all|slice:":3" %}
+                {% if contenido.poster_url %}
+                  <img src="{{ contenido.poster_url }}" alt="" loading="lazy"
+                       style="width:33%;height:100%;object-fit:cover;border-radius:6px">
+                {% endif %}
+              {% empty %}
+                <div class="muted small" style="display:grid;place-items:center;width:100%;
+                     background:var(--card-elevated);border-radius:6px">Lista vacía</div>
+              {% endfor %}
+            </div>
+            <div class="row row--between">
+              <strong>{{ lista.nombre }}</strong>
+              <span class="badge">{{ lista.visibilidad }}</span>
+            </div>
+            <div class="muted small">{{ lista.cuantos }} contenido{{ lista.cuantos|pluralize }}</div>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty">
+        <div class="empty__icon">🔖</div>
+        <div class="empty__title">Aún no tienes listas</div>
+        <p>Crea tu primera colección y compártela con tus amigos.</p>
+        <a class="btn btn--primary" href="{% url 'lists:crear_lista' %}" style="margin-top:12px">Crear lista</a>
+      </div>
+    {% endif %}
+  </section>
+
+  {% if compartidas %}
+    <section class="col">
+      <h2 class="section-title">Compartidas contigo</h2>
+      <div class="grid grid--cards">
+        {% for lista in compartidas %}
+          <a class="card col" href="{% url 'lists:detalle_lista' lista.id %}" style="color:inherit;gap:6px">
+            <strong>{{ lista.nombre }}</strong>
+            <div class="muted small">de {{ lista.propietario.get_full_name }} · {{ lista.cuantos }} contenidos</div>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+
+{% endblock %}

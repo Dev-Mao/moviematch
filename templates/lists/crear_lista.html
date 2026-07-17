@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Crear lista · MovieMatch{% endblock %}
+{% block page_title %}Crear lista{% endblock %}
+{% block page_subtitle %}Agrupa contenidos y decide quién puede verlos{% endblock %}
+
+{% block content %}
+  <form method="post" class="card" style="max-width:620px">
+    {% csrf_token %}
+
+    <div class="field">
+      <label class="field__label" for="nombre">Nombre de la lista</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Para maratón de finde">
+    </div>
+
+    <div class="field">
+      <label class="field__label" for="descripcion">Descripción</label>
+      <textarea id="descripcion" name="descripcion" placeholder="¿De qué trata esta lista?"></textarea>
+    </div>
+
+    <div class="field">
+      <label class="checkbox">
+        <input type="checkbox" name="es_publica">
+        <span>Hacer la lista pública (cualquier usuario podrá verla)</span>
+      </label>
+    </div>
+
+    {% if amigos %}
+      <div class="field">
+        <span class="field__label">Compartir con amigos</span>
+        <div class="row row--wrap" style="gap:8px">
+          {% for amigo in amigos %}
+            <label class="chip" style="cursor:pointer">
+              <input type="checkbox" name="compartida_con" value="{{ amigo.id }}">
+              <span>{{ amigo.get_full_name }}</span>
+            </label>
+          {% endfor %}
+        </div>
+        <div class="field__help">Solo puedes compartir con amistades aceptadas.</div>
+      </div>
+    {% endif %}
+
+    <div class="row">
+      <button type="submit" class="btn btn--primary">Crear lista</button>
+      <a href="{% url 'lists:mis_listas' %}" class="btn btn--outline">Cancelar</a>
+    </div>
+  </form>
+{% endblock %}

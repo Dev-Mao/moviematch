@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}{{ lista.nombre }} · MovieMatch{% endblock %}
+{% block page_title %}{{ lista.nombre }}{% endblock %}
+{% block page_subtitle %}
+  {{ lista.visibilidad }} · {{ lista.contenidos.count }} contenido{{ lista.contenidos.count|pluralize }}
+  {% if not es_propietario %}· de {{ lista.propietario.get_full_name }}{% endif %}
+{% endblock %}
+
+{% block topbar_actions %}
+  {% if es_propietario %}
+    <form method="post" action="{% url 'lists:eliminar_lista' lista.id %}">
+      {% csrf_token %}
+      <button type="submit" class="btn btn--danger btn--sm">Eliminar lista</button>
+    </form>
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+
+  {% if lista.descripcion %}
+    <p class="muted">{{ lista.descripcion }}</p>
+  {% endif %}
+
+  {% if lista.compartida_con.exists %}
+    <div class="row">
+      <span class="muted small">Compartida con:</span>
+      {% for persona in lista.compartida_con.all %}
+        <span class="badge">{{ persona.get_full_name }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% if lista.contenidos.exists %}
+    <div class="grid grid--posters">
+      {% for contenido in lista.contenidos.all %}
+        <div class="col" style="gap:8px">
+          {% include "partials/poster.html" with contenido=contenido meta=contenido.anio_estreno %}
+          {% if es_propietario %}
+            <form method="post" action="{% url 'lists:quitar_contenido' lista.id contenido.id %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn--outline btn--sm btn--block">Quitar</button>
+            </form>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div class="empty">
+      <div class="empty__icon">🎬</div>
+      <div class="empty__title">Esta lista está vacía</div>
+      <p>Agrega contenidos desde la ficha de cualquier película o serie.</p>
+      <a class="btn btn--primary" href="{% url 'catalog:catalogo' %}" style="margin-top:12px">Explorar catálogo</a>
+    </div>
+  {% endif %}
+
+{% endblock %}
