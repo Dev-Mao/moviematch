@@ -23,6 +23,7 @@ from apps.catalog.models import ContenidoAudiovisual, Genero, Pelicula, Serie
 
 API_BASE = "https://api.themoviedb.org/3"
 IMAGE_BASE = "https://image.tmdb.org/t/p/w500"
+BACKDROP_BASE = "https://image.tmdb.org/t/p/w1280"
 IDIOMA = "es-ES"
 
 
@@ -95,6 +96,12 @@ class Command(BaseCommand):
                 time.sleep(2)
         return {}
 
+    @staticmethod
+    def _imagen(detalle, campo, base):
+        """Construye la URL absoluta de una imagen de TMDB, si existe."""
+        ruta = detalle.get(campo)
+        return f"{base}{ruta}" if ruta else ""
+
     def _sinopsis(self, detalle, ruta):
         """Devuelve la sinopsis en español; si TMDB no la tiene, usa la inglesa."""
         texto = (detalle.get("overview") or "").strip()
@@ -147,7 +154,8 @@ class Command(BaseCommand):
             titulo=titulo,
             sinopsis=self._sinopsis(detalle, f"/movie/{tmdb_id}"),
             anio_estreno=anio,
-            poster_url=f"{IMAGE_BASE}{detalle['poster_path']}" if detalle.get("poster_path") else "",
+            poster_url=self._imagen(detalle, "poster_path", IMAGE_BASE),
+            backdrop_url=self._imagen(detalle, "backdrop_path", BACKDROP_BASE),
             clasificacion=self._certificacion_pelicula(detalle),
             duracion_min=detalle.get("runtime") or 0,
         )
@@ -198,7 +206,8 @@ class Command(BaseCommand):
             titulo=titulo,
             sinopsis=self._sinopsis(detalle, f"/tv/{tmdb_id}"),
             anio_estreno=anio,
-            poster_url=f"{IMAGE_BASE}{detalle['poster_path']}" if detalle.get("poster_path") else "",
+            poster_url=self._imagen(detalle, "poster_path", IMAGE_BASE),
+            backdrop_url=self._imagen(detalle, "backdrop_path", BACKDROP_BASE),
             clasificacion=self._certificacion_serie(detalle),
             num_temporadas=detalle.get("number_of_seasons") or 1,
             num_episodios=detalle.get("number_of_episodes") or 1,

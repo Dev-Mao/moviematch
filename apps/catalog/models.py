@@ -29,6 +29,7 @@ class ContenidoAudiovisual(models.Model):
     sinopsis = models.TextField("sinopsis", blank=True)
     anio_estreno = models.PositiveIntegerField("año de estreno")
     poster_url = models.URLField("URL del póster", blank=True)
+    backdrop_url = models.URLField("URL del fondo panorámico", blank=True)
     clasificacion = models.CharField("clasificación", max_length=10, blank=True)
     generos = models.ManyToManyField(Genero, related_name="contenidos", verbose_name="géneros")
     estado = models.CharField(

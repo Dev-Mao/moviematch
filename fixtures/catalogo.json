@@ -217,15 +217,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 61,
+  "pk": 121,
   "fields": {
     "titulo": "Socias por accidente",
     "sinopsis": "Alexa, una elegante relacionista pública, y Regina, una entrenadora de carácter fuerte y espíritu independiente, llevan vidas completamente opuestas hasta que un mismo hombre entra en su historia. Tras una coincidencia inesperada, ambas descubren que fueron engañadas por la misma persona y que sus caminos están más entrelazados de lo que imaginaban. Obligadas a unir fuerzas, Alexa y Regina pasarán de la desconfianza a una alianza improbable que pondrá a prueba sus diferencias, sus decisiones y su idea de lo que significa apoyarse entre mujeres.",
     "anio_estreno": 2026,
     "poster_url": "https://image.tmdb.org/t/p/w500/sr1Yoj6XLPTWYcbDoBy67xivW4I.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/tdY46jlxbcvgMHKlJhSCebahhBh.jpg",
     "clasificacion": "PG-13",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:56.677Z",
+    "creado": "2026-07-17T02:08:56.705Z",
     "generos": [
       4,
       14
@@ -234,15 +235,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 62,
+  "pk": 122,
   "fields": {
     "titulo": "Intercambiados",
     "sinopsis": "Una pequeña criatura del bosque intercambia el cuerpo con un majestuoso pájaro del valle, lo que los obliga a colaborar para sobrevivir a la aventura más salvaje de sus vidas.",
     "anio_estreno": 2026,
     "poster_url": "https://image.tmdb.org/t/p/w500/i89vUDwNhAEWUZSFYITSiv1RIbK.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/zMwhWailP1WY7sb6AoE6b8ugoy.jpg",
     "clasificacion": "7",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:56.973Z",
+    "creado": "2026-07-17T02:08:56.973Z",
     "generos": [
       3,
       2,
@@ -253,15 +255,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 63,
+  "pk": 123,
   "fields": {
     "titulo": "Cadena perpetua",
     "sinopsis": "Acusado del asesinato de su mujer, Andrew Dufresne, tras ser condenado a cadena perpetua, es enviado a la prisión de Shawshank. Con el paso de los años conseguirá ganarse la confianza del director del centro y el respeto de sus compañeros presidiarios, especialmente de Red, el jefe de la mafia de los sobornos.",
     "anio_estreno": 1994,
     "poster_url": "https://image.tmdb.org/t/p/w500/uRRTV7p6l2ivtODWJVVAMRrwTn2.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/zfbjgQE1uSd9wiPTX4VzsLi0rGG.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:57.230Z",
+    "creado": "2026-07-17T02:08:57.204Z",
     "generos": [
       5,
       7
@@ -270,15 +273,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 64,
+  "pk": 124,
   "fields": {
     "titulo": "Michael",
     "sinopsis": "El viaje de Michael Jackson más allá de la música, desde el descubrimiento de su extraordinario talento como líder de los Jackson Five hasta convertirse en una visionaria estrella cuya ambición creativa despertó un incansable afán por consagrarse como el mayor icono de la industria del entretenimiento.",
     "anio_estreno": 2026,
     "poster_url": "https://image.tmdb.org/t/p/w500/2uK36ujoDXOfNiJ5Yp3raVprB51.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/xBT0oNq6rsTFv4SxG5uGRIEOrq6.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:57.519Z",
+    "creado": "2026-07-17T02:08:57.465Z",
     "generos": [
       7,
       12
@@ -287,15 +291,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 65,
+  "pk": 125,
   "fields": {
     "titulo": "El padrino",
     "sinopsis": "Don Vito Corleone, conocido dentro de los círculos del hampa como \"El Padrino\", es el patriarca de una de las cinco familias que ejercen el mando de la Cosa Nostra en Nueva York (Estados Unidos) durante la década de 1940. Don Corleone tiene cuatro hijos: una chica, Connie, y tres varones; Sonny, Michael y Fredo. Cuando Vito reclina intervenir en el negocio de estupefacientes, empieza una cruenta lucha de violentos episodios entre las distintas familias del crimen organizado.",
     "anio_estreno": 1972,
     "poster_url": "https://image.tmdb.org/t/p/w500/mBszHHr7tcDKR05Fa4IDa2bBvda.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/tSPT36ZKlP2WVHJLM4cQPLSzv3b.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:57.772Z",
+    "creado": "2026-07-17T02:08:57.752Z",
     "generos": [
       5,
       7
@@ -304,15 +309,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 66,
+  "pk": 126,
   "fields": {
     "titulo": "Proyecto Salvación",
     "sinopsis": "El profesor de ciencias Ryland Grace se despierta en una nave espacial a años luz de casa sin recordar quién es ni cómo ha llegado hasta allí. A medida que recupera la memoria, empieza a descubrir su misión: resolver el enigma de la misteriosa sustancia que provoca la extinción del sol. Deberá recurrir a sus conocimientos científicos y a sus ideas poco ortodoxas para salvar todo lo que hay en la Tierra de la extinción... pero una amistad inesperada significa que quizá no tenga que hacerlo solo.",
     "anio_estreno": 2026,
     "poster_url": "https://image.tmdb.org/t/p/w500/fj1FAiS6OHidg1O1T6z2356fD6u.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/fFyLcR22R4ynrecqjMniKXm0UTp.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:58.027Z",
+    "creado": "2026-07-17T02:08:58.073Z",
     "generos": [
       2,
       15
@@ -321,15 +327,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 67,
+  "pk": 127,
   "fields": {
     "titulo": "El padrino II",
     "sinopsis": "Continuación de la saga de los Corleone con dos historias paralelas: la elección de Michael Corleone como jefe de los negocios familiares y los orígenes del patriarca, el ya fallecido Don Vito, primero en Sicilia y luego en Estados Unidos, donde, empezando desde abajo, llegó a ser un poderosísimo jefe de la mafia de Nueva York.",
     "anio_estreno": 1974,
     "poster_url": "https://image.tmdb.org/t/p/w500/mbry0W5PRylSUHsYzdiY2FSJwze.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/kGzFbGhp99zva6oZODW5atUtnqi.jpg",
     "clasificacion": "18",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:58.301Z",
+    "creado": "2026-07-17T02:08:58.375Z",
     "generos": [
       5,
       7
@@ -338,15 +345,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 68,
+  "pk": 128,
   "fields": {
     "titulo": "La lista de Schindler",
     "sinopsis": "Oskar Schindler, un hombre de enorme astucia y talento para las relaciones públicas, organiza un ambicioso plan para ganarse la simpatía de los nazis. Después de la invasión de Polonia por los alemanes, consigue, gracias a sus relaciones con los nazis, la propiedad de una fábrica de Cracovia. Allí emplea a cientos de operarios judíos, cuya explotación le hace prosperar rápidamente. Su gerente, también judío, es el verdadero director en la sombra, pues Schindler no tiene el menor conocimiento industrial.",
     "anio_estreno": 1993,
     "poster_url": "https://image.tmdb.org/t/p/w500/3Ho0pXsnMxpGJWqdOi0KDNdaTkT.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/zb6fM1CX41D9rF9hdgclu0peUmy.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:58.587Z",
+    "creado": "2026-07-17T02:08:58.631Z",
     "generos": [
       18,
       7,
@@ -356,15 +364,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 69,
+  "pk": 129,
   "fields": {
     "titulo": "Doce hombres sin piedad",
     "sinopsis": "Tras escuchar todos los testimonios y valorar las pruebas presentadas, un jurado popular compuesto por doce hombres tiene que decidir, por unanimidad, si absuelve o condena a muerte a un joven acusado de haber matado a su padre. Al principio, once están completamente convencidos de su culpabilidad y se inclinan por la condena, pero el que discrepa empieza a plantear dudas razonables que, poco a poco, van resquebrajando la inicial seguridad de los demás.",
     "anio_estreno": 1957,
     "poster_url": "https://image.tmdb.org/t/p/w500/qyVoDb3EKO5SnhpSRpztNmZjo70.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/qqHQsStV6exghCM7zbObuYBiYxw.jpg",
     "clasificacion": "A",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:58.829Z",
+    "creado": "2026-07-17T02:08:58.895Z",
     "generos": [
       7
     ]
@@ -372,15 +381,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 70,
+  "pk": 130,
   "fields": {
     "titulo": "Criaturas luminosas",
     "sinopsis": "En este drama, basado en el bestseller homónimo, una viuda forja un vínculo con un pulpo muy listo y un joven a la deriva mientras trabaja de noche en un pequeño acuario.",
     "anio_estreno": 2026,
     "poster_url": "https://image.tmdb.org/t/p/w500/afCyi1YlcSq2BH14UJmFbqzzJ65.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/bVGHSe47W6oCQL1Q88pvRAet51A.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:59.080Z",
+    "creado": "2026-07-17T02:08:59.189Z",
     "generos": [
       7,
       13
@@ -389,15 +399,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 71,
+  "pk": 131,
   "fields": {
     "titulo": "El viaje de Chihiro",
     "sinopsis": "Durante el traslado de su familia a los suburbios, una niña de 10 años de edad deambula por un mundo gobernado por dioses, brujas y espíritus, y donde los humanos se convierten en bestias.",
     "anio_estreno": 2001,
     "poster_url": "https://image.tmdb.org/t/p/w500/2RcxjDykOssx4SfqshewyI9vfSl.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/dyJvKsNs2KP8qQnAXbRwDjblViy.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:59.372Z",
+    "creado": "2026-07-17T02:08:59.478Z",
     "generos": [
       3,
       8,
@@ -407,15 +418,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 72,
+  "pk": 132,
   "fields": {
     "titulo": "El caballero oscuro",
     "sinopsis": "Batman/Bruce Wayne regresa para continuar su guerra contra el crimen. Con la ayuda del teniente Jim Gordon y del Fiscal del Distrito Harvey Dent, Batman se propone destruir el crimen organizado en la ciudad de Gotham. El triunvirato demuestra su eficacia, pero, de repente, aparece Joker, un nuevo criminal que desencadena el caos y tiene aterrados a los ciudadanos.",
     "anio_estreno": 2008,
     "poster_url": "https://image.tmdb.org/t/p/w500/8QDQExnfNFOtabLDKqfDQuHDsIg.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/dqK9Hag1054tghRQSqLSfrkvQnA.jpg",
     "clasificacion": "7",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:59.658Z",
+    "creado": "2026-07-17T02:09:00.338Z",
     "generos": [
       1,
       5,
@@ -425,15 +437,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 73,
+  "pk": 133,
   "fields": {
     "titulo": "Instinto protector",
     "sinopsis": "La vida pacífica de Nikki, una exheroína de guerra, se ve destrozada cuando su hija es secuestrada. Inmersa en el submundo criminal mientras es perseguida por policías y militares, debe luchar para rescatar a su hija.",
     "anio_estreno": 2026,
     "poster_url": "https://image.tmdb.org/t/p/w500/VAH1JuP9FncRg5MNuzPQFQwdhF.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/vpuPY4UziUCxv7gYYoaZQ3LX7to.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:02:59.914Z",
+    "creado": "2026-07-17T02:09:00.703Z",
     "generos": [
       1,
       17
@@ -442,15 +455,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 74,
+  "pk": 134,
   "fields": {
     "titulo": "Un amor contra viento y marea",
     "sinopsis": "Los Singh son una familia india con grandes convicciones culturales de su nación de origen, que emigraron a Reino Unido antes de nacer sus primeros hijos. Uno de ellos querrá casarse con una mujer ajena a su cultura y para ello deberá hacer todos los esfuerzos por convencer a su familia.",
     "anio_estreno": 1995,
     "poster_url": "https://image.tmdb.org/t/p/w500/2CAL2433ZeIihfX1Hb2139CX0pW.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/84beTJf26mfhoasUlKSOiNSutyS.jpg",
     "clasificacion": "G",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:00.158Z",
+    "creado": "2026-07-17T02:09:01.063Z",
     "generos": [
       4,
       7,
@@ -460,15 +474,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 75,
+  "pk": 135,
   "fields": {
     "titulo": "La milla verde",
     "sinopsis": "En el sur de los Estados Unidos, en plena Depresión, Paul Edgecomb es un vigilante penitenciario a cargo de la Milla Verde, un pasillo que separa las celdas de los reclusos condenados a la silla eléctrica. Esperando su ejecución está John Coffey, un gigantesco negro acusado de asesinar brutalmente a dos hermanas de nueve años. Tras una personalidad ingenua, Coffey esconde un don sobrenatural prodigioso. A medida que transcurre la historia, Paul Edgecomb aprende que los milagros ocurren... incluso en los lugares más insospechados.",
     "anio_estreno": 1999,
     "poster_url": "https://image.tmdb.org/t/p/w500/aBQiJRxGRrX0mXFMjxyzWYFtEnf.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/b6HWTOxn1xevvyHU2K9ICvaRU6g.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:00.430Z",
+    "creado": "2026-07-17T02:09:01.359Z",
     "generos": [
       5,
       7,
@@ -478,15 +493,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 76,
+  "pk": 136,
   "fields": {
     "titulo": "¿Quieres ser mi... hijo?",
     "sinopsis": "Lu, una mujer conformista de 40 años, un día descubre que su pareja de hace 15 años la estaba engañando. En ese momento, Lu toma la decisión de regresar a su departamento de soltera para empezar de cero, ya que se siente estancada y desconsolada. Conoce a su nuevo vecino Javier, un joven y apuesto mujeriego de tan sólo 23 años, quien no la deja descansar por sus constantes fiestas. Para poder conseguir el trabajo de sus sueños, Lu decide mentir en su entrevista al decir que es mujer de familia y que tiene un hijo de 19 años. Por si fuera poco, tiene que enfrentar la última prueba para ser contratada y pasar un fin de semana en Valle de Bravo con los ejecutivos de la empresa y sus familias. Al encontrarse desesperada, Lu le ofrece el trabajo a Javier, para que se haga pasar por su hijo y a cambio, ella no lo molestará más cuando esté de fiesta.",
     "anio_estreno": 2023,
     "poster_url": "https://image.tmdb.org/t/p/w500/9GuvODahvuFqdhuZ16aBLR4UJoP.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/xyWKrni8WrYzqn7ztvI5nIY0h62.jpg",
     "clasificacion": "PG-13",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:00.740Z",
+    "creado": "2026-07-17T02:09:01.578Z",
     "generos": [
       4,
       14
@@ -495,15 +511,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 77,
+  "pk": 137,
   "fields": {
     "titulo": "El señor de los anillos: El retorno del rey",
     "sinopsis": "Las fuerzas de Saruman han sido destruidas, y su fortaleza sitiada. Ha llegado el momento de que se decida el destino de la Tierra Media, y por primera vez en mucho tiempo, parece que hay una pequeña esperanza. La atención del señor oscuro Sauron se centra ahora en Gondor, el último reducto de los hombres, y del cual Aragorn tendrá que reclamar el trono para ocupar su puesto de rey. Pero las fuerzas de Sauron ya se preparan para lanzar el último y definitivo ataque contra el reino de Gondor, la batalla que decidirá el destino de todos. Mientras tanto, Frodo y Sam continuan su camino hacia Mordor, a la espera de que Sauron no repare en que dos pequeños Hobbits se acercan cada día más al final de su camino, el Monte del Destino.",
     "anio_estreno": 2003,
     "poster_url": "https://image.tmdb.org/t/p/w500/mWuFbQrXyLk2kMBKF9TUPtDwuPx.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/2u7zbn8EudG6kLlBzUYqP8RyFU4.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:00.998Z",
+    "creado": "2026-07-17T02:09:01.812Z",
     "generos": [
       1,
       2,
@@ -513,15 +530,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 78,
+  "pk": 138,
   "fields": {
     "titulo": "Parásitos",
     "sinopsis": "Tanto Gi Taek (Song Kang-ho) como su familia están sin trabajo. Cuando su hijo mayor, Gi Woo (Choi Woo-sik), empieza a dar clases particulares en casa de Park (Lee Seon-gyun), las dos familias, que tienen mucho en común pese a pertenecer a dos mundos totalmente distintos, comienzan una interrelación de resultados imprevisibles.",
     "anio_estreno": 2019,
     "poster_url": "https://image.tmdb.org/t/p/w500/4N55tgxDW0RRATyrZHbx0q9HUKv.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/wCuUKiRaz0wEESsYqmQy005xvTE.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:01.243Z",
+    "creado": "2026-07-17T02:09:02.352Z",
     "generos": [
       4,
       7,
@@ -531,15 +549,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 79,
+  "pk": 139,
   "fields": {
     "titulo": "Your Name.",
     "sinopsis": "Taki y Mitsuha descubren un día que durante el sueño sus cuerpos se intercambian, y comienzan a comunicarse por medio de notas. A medida que consiguen superar torpemente un reto tras otro, se va creando entre los dos un vínculo que poco a poco se convierte en algo más romántico.",
     "anio_estreno": 2016,
     "poster_url": "https://image.tmdb.org/t/p/w500/iaiy3tg9QVkDpObm1IGqmbC9A5C.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/mMtUybQ6hL24FXo0F3Z4j2KG7kZ.jpg",
     "clasificacion": "APTA",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:01.487Z",
+    "creado": "2026-07-17T02:09:02.634Z",
     "generos": [
       3,
       7,
@@ -549,15 +568,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 80,
+  "pk": 140,
   "fields": {
     "titulo": "Interstellar",
     "sinopsis": "Un grupo de exploradores hacen uso de un agujero de gusano recientemente descubierto para superar las limitaciones de los viajes espaciales tripulados y vencer las inmensas distancias que tiene un viaje interestelar.",
     "anio_estreno": 2014,
     "poster_url": "https://image.tmdb.org/t/p/w500/9cTfZWP5TfdnmAjiD6ZBXWIJ7O9.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/2ssWTSVklAEc98frZUQhgtGHx7s.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:01.901Z",
+    "creado": "2026-07-17T02:09:02.901Z",
     "generos": [
       2,
       15,
@@ -567,15 +587,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 81,
+  "pk": 141,
   "fields": {
     "titulo": "Pulp Fiction",
     "sinopsis": "Jules y Vincent, dos asesinos a sueldo con muy pocas luces, trabajan para Marsellus Wallace. Vincent le confiesa a Jules que Marsellus le ha pedido que cuide de Mia, su mujer. Jules le recomienda prudencia porque es muy peligroso sobrepasarse con la novia del jefe. Cuando llega la hora de trabajar, ambos deben ponerse manos a la obra. Su misión: recuperar un misterioso maletín.",
     "anio_estreno": 1994,
     "poster_url": "https://image.tmdb.org/t/p/w500/hNcQAuquJxTxl2fJFs1R42DrWcf.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg",
     "clasificacion": "18",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:02.393Z",
+    "creado": "2026-07-17T02:09:03.425Z",
     "generos": [
       4,
       5,
@@ -585,15 +606,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 82,
+  "pk": 142,
   "fields": {
     "titulo": "El bueno, el feo y el malo",
     "sinopsis": "Durante la Guerra de Secesión, tres cazadores de recompensas se lanzan a la búsqueda de un tesoro que ninguno de los tres truhanes puede localizar sin la ayuda de los otros dos. Tuco sabe que el tesoro se encuentra en un cementerio, mientras que Joe conoce el nombre inscrito en la tumba que lo esconde. Mientras tanto, Sentenza no duda en matar a mujeres y niños para conseguir su meta. De esta forma, los tres hombres colaboran en apariencia, pero al final intentarán eliminarse mutuamente.",
     "anio_estreno": 1966,
     "poster_url": "https://image.tmdb.org/t/p/w500/71HKV5F9bfm05ZZnjGmRuFpUVCo.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/Adrip2Jqzw56KeuV2nAxucKMNXA.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:02.654Z",
+    "creado": "2026-07-17T02:09:03.710Z",
     "generos": [
       19
     ]
@@ -601,15 +623,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 83,
+  "pk": 143,
   "fields": {
     "titulo": "Forrest Gump",
     "sinopsis": "Forrest Gump es un chico con deficiencias mentales no muy profundas y con alguna incapacidad motora que, a pesar de todo, llegará a convertirse, entre otras cosas, en un héroe durante la Guerra del Vietnam. Su persistencia y bondad le llevarán a conseguir una gran fortuna, ser objeto del clamor popular y a codearse con las más altas esferas sociales y políticas del país. Siempre sin olvidar a Jenny, su gran amor desde que era niño.",
     "anio_estreno": 1994,
     "poster_url": "https://image.tmdb.org/t/p/w500/azV6hV99lYkdhydsQbJCI6FqMl4.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/66Kn4XWhkuPkJxOJyPEx4U2CUfN.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:02.904Z",
+    "creado": "2026-07-17T02:09:03.955Z",
     "generos": [
       4,
       7,
@@ -619,15 +642,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 84,
+  "pk": 144,
   "fields": {
     "titulo": "Chainsaw Man - La película: El arco de Reze",
     "sinopsis": "Denji trabajaba como cazador de demonios para la yakuza, tratando de saldar la deuda que había heredado de sus padres, pero la yakuza lo traicionó y lo mató. Antes de perder el conocimiento, Pochita, el perro-demonio motosierra de Denji, hizo un trato con él y le salvó la vida. Así se fusionaron, creando al imparable Chainsaw Man. Ahora, en medio de una brutal guerra entre demonios, cazadores y enemigos secretos, una misteriosa chica llamada Reze irrumpe en su mundo y Denji se enfrenta a su batalla más mortífera, impulsado por el amor, en un mundo donde la supervivencia no conoce reglas.",
     "anio_estreno": 2025,
     "poster_url": "https://image.tmdb.org/t/p/w500/fJdnp5OO2wh07tdy6noACNyaqMJ.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/qX5zlO7tskYFs7sSuFgALW5pFy5.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:03.168Z",
+    "creado": "2026-07-17T02:09:04.232Z",
     "generos": [
       1,
       3,
@@ -638,15 +662,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 85,
+  "pk": 145,
   "fields": {
     "titulo": "Uno de los nuestros",
     "sinopsis": "Henry, un niño de trece años de Brooklyn, vive fascinado con el mundo de los gángsters. Su sueño se hace realidad cuando entra a formar parte de la familia Pauline, dueña absoluta de la zona, que lo educan como un miembro más de la banda convirtiéndole en un destacado mafioso.",
     "anio_estreno": 1990,
     "poster_url": "https://image.tmdb.org/t/p/w500/3Yy0zBO9AlyAZH1cTI8Ko2ouCi.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/gILte6Zd7m1YneIr6MVhh30S9pr.jpg",
     "clasificacion": "18",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:03.410Z",
+    "creado": "2026-07-17T02:09:04.508Z",
     "generos": [
       5,
       7
@@ -655,15 +680,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 86,
+  "pk": 146,
   "fields": {
     "titulo": "Los siete samuráis",
     "sinopsis": "Una banda de forajidos atemorizan a los habitantes de un pequeño pueblo, saqueándolos periódicamente sin piedad. Para repeler estos ataques, los aldeanos deciden contratar a mercenarios. Finalmente, consiguen los servicios de 7 guerreros, 7 samurais dispuestos a defenderlos a cambio, tan solo, de cobijo y comida.",
     "anio_estreno": 1954,
     "poster_url": "https://image.tmdb.org/t/p/w500/17pWuwQzwKPLKvvFoqxBeVnEtF6.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/qvZ91FwMq6O47VViAr8vZNQz3WI.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:03.637Z",
+    "creado": "2026-07-17T02:09:04.777Z",
     "generos": [
       1,
       7
@@ -672,15 +698,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 87,
+  "pk": 147,
   "fields": {
     "titulo": "La tumba de las luciérnagas",
     "sinopsis": "Verano de 1945. La aviación estadounidense somete las ciudades japonesas a continuos ataques aéreos. En uno de ellos, una incursión con bombas incendiarias convierte la ciudad de Kōbe en un infierno humeante, para los dos protagonistas (Seita, de 14 años, y su hermanita Setsuko, de 5). El joven Seita y su pequeña hermana Setsuko son hijos de un oficial de la marina japonesa. Durante la Segunda Guerra Mundial, ambos viven con su madre, pero un día, tras un bombardeo, ellos se retrasan y no consiguen llegar al búnker donde ella los espera.",
     "anio_estreno": 1988,
     "poster_url": "https://image.tmdb.org/t/p/w500/juKTAn2AuoE9MvCNvf3kwZrt1t4.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/aHaqZpOL7UyVu0nKqp3SMz0o2E1.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:03.962Z",
+    "creado": "2026-07-17T02:09:05.053Z",
     "generos": [
       3,
       18,
@@ -690,15 +717,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 88,
+  "pk": 148,
   "fields": {
     "titulo": "Harakiri",
     "sinopsis": "Un samurái pide permiso para practicarse el Seppuku (o Harakiri), ceremonia durante la cual se quitará la vida abriéndose el estómago al tiempo que otro samurái lo decapitará. Solicita también poder contar la historia que le ha llevado a tomar tan trágica decisión.",
     "anio_estreno": 1962,
     "poster_url": "https://image.tmdb.org/t/p/w500/6Cw2LJzt6jRALHystjzWazeB4Pg.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/nC3IjYhUgZWgfKfFX0ygMigFwgc.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:04.179Z",
+    "creado": "2026-07-17T02:09:05.333Z",
     "generos": [
       1,
       7,
@@ -708,15 +736,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 89,
+  "pk": 149,
   "fields": {
     "titulo": "La vida es bella",
     "sinopsis": "En 1939, a punto de estallar la Segunda Guerra Mundial (1939-1945), el extravagante Guido llega a Arezzo, en la Toscana, con la intención de abrir una librería. Allí conoce a la encantadora Dora y, a pesar de que es la prometida del fascista Rodolfo, se casa con ella y tiene un hijo. Al estallar la guerra, los tres son internados en un campo de exterminio, donde Guido hará lo imposible para hacer creer a su hijo que la terrible situación que están padeciendo es tan sólo un juego.",
     "anio_estreno": 1997,
     "poster_url": "https://image.tmdb.org/t/p/w500/aZ7MFlKPfB02Lr9NwZQ4vsYRgcy.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/6aNKD81RHR1DqUUa8kOZ1TBY1Lp.jpg",
     "clasificacion": "APTA",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:04.408Z",
+    "creado": "2026-07-17T02:09:05.597Z",
     "generos": [
       4,
       7
@@ -725,15 +754,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 90,
+  "pk": 150,
   "fields": {
     "titulo": "El club de la lucha",
     "sinopsis": "Un hombre consumido por el insomnio y una vida sin sentido conoce a Tyler Durden, un carismático anarquista que lo arrastra a un club secreto donde el dolor despierta algo dormido. Lo que comienza como liberación pronto se convierte en una guerra contra el sistema…",
     "anio_estreno": 1999,
     "poster_url": "https://image.tmdb.org/t/p/w500/sgTAWJFaB2kBvdQxRGabYFiQqEK.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/c6OLXfKAk5BKeR6broC8pYiCquX.jpg",
     "clasificacion": "18",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:04.710Z",
+    "creado": "2026-07-17T02:09:05.879Z",
     "generos": [
       7,
       17
@@ -742,15 +772,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 91,
+  "pk": 151,
   "fields": {
     "titulo": "El señor de los anillos: La comunidad del anillo",
     "sinopsis": "En la Tierra Media, el Señor Oscuro Saurón creó los Grandes Anillos de Poder, forjados por los herreros Elfos. Tres para los reyes Elfos, siete para los Señores Enanos, y nueve para los Hombres Mortales. Secretamente, Saurón también forjó un anillo maestro, el Anillo Único, que contiene en sí el poder para esclavizar a toda la Tierra Media. Con la ayuda de un grupo de amigos y de valientes aliados, Frodo emprende un peligroso viaje con la misión de destruir el Anillo Único. Pero el Señor Oscuro Sauron, quien creara el Anillo, envía a sus servidores para perseguir al grupo. Si Sauron lograra recuperar el Anillo, sería el final de la Tierra Media.",
     "anio_estreno": 2001,
     "poster_url": "https://image.tmdb.org/t/p/w500/9xtH1RmAzQ0rrMBNUMXstb2s3er.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/mWDdRXTivGE7aaY2vo1Ie0PfCX5.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:04.947Z",
+    "creado": "2026-07-17T02:09:06.536Z",
     "generos": [
       1,
       2,
@@ -760,15 +791,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 92,
+  "pk": 152,
   "fields": {
     "titulo": "Cinema Paradiso",
     "sinopsis": "En un pequeño pueblo siciliano durante los años previos a la llegada de la televisión (justo al finalizar la Segunda Guerra Mundial) el joven Toto vivía fascinado por el cine. Toto trata de entablar amistad con Alfredo, el proyeccionista del cine local, una persona muy irritable pero con un gran corazón. Todos estos hechos se presentan en forma de nostálgicos recuerdos de Toto que ha crecido hasta convertirse en un cineasta de éxito, y que revive a su infancia cuando recibe la noticia de que Alfredo ha muerto.",
     "anio_estreno": 1988,
     "poster_url": "https://image.tmdb.org/t/p/w500/hHwsr3t5n7VVUbPyU8VZswn0jkL.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/zoVeIgKzGJzpdG6Gwnr7iOYfIMU.jpg",
     "clasificacion": "7",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:05.229Z",
+    "creado": "2026-07-17T02:09:06.809Z",
     "generos": [
       7,
       14
@@ -777,15 +809,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 93,
+  "pk": 153,
   "fields": {
     "titulo": "Ciudad de Dios",
     "sinopsis": "Basada en hechos reales, cuenta la historia del crecimiento del crimen organizado en los suburbios de la ciudad de Río de Janeiro, desde finales de los años sesenta hasta el comienzo de los ochenta, cuando el tráfico de drogas y la violencia impusieron su ley entre la miseria de las favelas.“Buscapé” tiene 11 años y es sólo un niño más en Cidade de Deus, un suburbio de Río de Janeiro. Tímido y delicado, observa a los niños duros de su barrio, sus robos, sus peleas, sus enfrentamientos diarios con la policía. Ya sabe lo que quiere ser si consigue sobrevivir: fotógrafo. “Dadinho”, un niño de su misma edad, se traslada al barrio. Sueña con ser el criminal más peligroso de Río de Janeiro y empieza su aprendizaje haciendo recados para los delincuentes locales. Dos vidas paralelas en Cidade de Deus.",
     "anio_estreno": 2002,
     "poster_url": "https://image.tmdb.org/t/p/w500/zYjngc6yGUO1IEuAwk0yAhg8CKh.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/uvitbjFU4JqvMwIkMWHp69bmUzG.jpg",
     "clasificacion": "18",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:05.462Z",
+    "creado": "2026-07-17T02:09:07.104Z",
     "generos": [
       5,
       7
@@ -794,15 +827,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 94,
+  "pk": 154,
   "fields": {
     "titulo": "El señor de los anillos: Las dos torres",
     "sinopsis": "La Compañía del Anillo se ha disuelto. El portador del anillo Frodo y su fiel amigo Sam se dirigen hacia Mordor para destruir el Anillo Único y acabar con el poder de Sauron. Mientras, y tras la dura batalla contra los orcos donde cayó Boromir, el hombre Aragorn, el elfo Legolas y el enano Gimli intentan rescatar a los medianos Merry y Pipin, secuestrados por los ogros de Mordor. Por su parte, Saurón y el traidor Sarumán continúan con sus planes en Mordor, en espera de la guerra contra las razas libres de la Tierra Media.",
     "anio_estreno": 2002,
     "poster_url": "https://image.tmdb.org/t/p/w500/up6gIHZlfEQZkHIfQwcOOaGOzOt.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/kWYfW2Re0rUDE6IHhy4CRuKWeFr.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:05.700Z",
+    "creado": "2026-07-17T02:09:07.612Z",
     "generos": [
       1,
       2,
@@ -812,15 +846,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 95,
+  "pk": 155,
   "fields": {
     "titulo": "Psicosis",
     "sinopsis": "Una joven secretaria, tras cometer un robo, se marcha de la ciudad y conduce durante horas, parando para descansar en un pequeño motel de carretera regentado por un joven llamado Norman. Todo parece normal y tranquilo en el apartado motel y en la casa de al lado en la que viven Norman y su madre pero, mientras está en la ducha, la joven es asesinada salvajemente a cuchilladas.",
     "anio_estreno": 1960,
     "poster_url": "https://image.tmdb.org/t/p/w500/xFbnc2QPG5H5gYWsGbZT4q8Akya.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/mufF1aYvwdpKerhq5R1YrVcbJLY.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:05.967Z",
+    "creado": "2026-07-17T02:09:08.374Z",
     "generos": [
       13,
       17,
@@ -830,15 +865,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 96,
+  "pk": 156,
   "fields": {
     "titulo": "O Auto da Compadecida",
     "sinopsis": "En el interior del estado de Paríba, en el pueblo de Taperoá, viven João Grilo y Chicó, dos tipos muy pobres que van anunciando por las calles la mejor película del mundo, 'La Pasión de Cristo'. La sesión tiene éxito y ellos ganan algo de dinero pero siguen luchando por la supervivencia. João Grilo y Chicó planean nuevas tretas para conseguir algún dinero y se enfrentan a numeroso desafíos provocando múltiples confusiones causadas por la astucia de João Grilo, siempre acompañado de Chicó.",
     "anio_estreno": 2000,
     "poster_url": "https://image.tmdb.org/t/p/w500/imcOp1kJsCsAFCoOtY5OnPrFbAf.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/alQqTpmEkxSLgajfEYTsTH6nAKB.jpg",
     "clasificacion": "",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:06.232Z",
+    "creado": "2026-07-17T02:09:08.661Z",
     "generos": [
       4,
       7,
@@ -849,15 +885,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 97,
+  "pk": 157,
   "fields": {
     "titulo": "Alguien voló sobre el nido del cuco",
     "sinopsis": "Randle McMurphy (Jack Nicholson), un violador de espíritu libre, que vive contracorriente, es recluido en un hospital psiquiátrico. La inflexible disciplina del centro acentúa su contagiosa tendencia al desorden, que acabará desencadenando una guerra entre los pacientes y el personal de la clínica con la fría y severa enfermera Ratched (Louise Fletcher) a la cabeza. La suerte de cada paciente del pabellón está en juego.",
     "anio_estreno": 1975,
     "poster_url": "https://image.tmdb.org/t/p/w500/lBYmCynNEPt7HVaJvuXgfHvLhbJ.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/uA8eSNAUUUyfHNIrG4h0zHxzt9W.jpg",
     "clasificacion": "18",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:06.476Z",
+    "creado": "2026-07-17T02:09:09.438Z",
     "generos": [
       7
     ]
@@ -865,15 +902,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 98,
+  "pk": 158,
   "fields": {
     "titulo": "Cosas imposibles",
     "sinopsis": "La vida es tan curiosa e impredecible que, a veces, uno encuentra la felicidad donde menos lo espera. Matilde es una mujer que, tras la muerte de su esposo –un hombre que abusó de ella constantemente–, encuentra a su nuevo gran amigo en Miguel, su vecino joven, inseguro, desorientado y hasta dealer..",
     "anio_estreno": 2021,
     "poster_url": "https://image.tmdb.org/t/p/w500/eaf7GQj0ieOwm08rrvjJQNbN0kN.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/bxSBOAD8AuMHYMdW3jso9npAkgt.jpg",
     "clasificacion": "",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:06.732Z",
+    "creado": "2026-07-17T02:09:09.809Z",
     "generos": [
       7,
       8
@@ -882,15 +920,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 99,
+  "pk": 159,
   "fields": {
     "titulo": "A Silent Voice",
     "sinopsis": "Shōko, una niña con discapacidad auditiva, es víctima de acoso en su escuela, siendo Shōya su principal agresor. Cuando ella se cambia de colegio, él sufre el rechazo de sus compañeros y queda aislado. Años después, intenta enmendar su error y hacer las paces con Shōko.",
     "anio_estreno": 2016,
     "poster_url": "https://image.tmdb.org/t/p/w500/hGQnljXpDGI429SC39LohaQBHhf.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/5lAMQMWpXMsirvtLLvW7cJgEPkU.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:06.971Z",
+    "creado": "2026-07-17T02:09:10.132Z",
     "generos": [
       3,
       7,
@@ -900,15 +939,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 100,
+  "pk": 160,
   "fields": {
     "titulo": "Spider-Man: un nuevo universo",
     "sinopsis": "En un universo paralelo donde Peter Parker ha muerto, un joven de secundaria llamado Miles Morales es el nuevo Spider-Man. Sin embargo, cuando el líder mafioso Wilson Fisk construye el 'Super Colisionador' trae a una versión alternativa de Peter Parker que tratará de enseñar a Miles como ser un mejor Spider-Man. Pero no será el único Spider Man en entrar a este universo:  cuatro versiones alternativas buscan regresar a su universo antes de que toda la realidad se colapse.",
     "anio_estreno": 2018,
     "poster_url": "https://image.tmdb.org/t/p/w500/xRMZikjAHNFebD1FLRqgDZeGV4a.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/8mnXR9rey5uQ08rZAvzojKWbDQS.jpg",
     "clasificacion": "7",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:07.274Z",
+    "creado": "2026-07-17T02:09:10.564Z",
     "generos": [
       1,
       3,
@@ -919,15 +959,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 101,
+  "pk": 161,
   "fields": {
     "titulo": "El imperio contraataca",
     "sinopsis": "Tras un ataque sorpresa de las tropas imperiales a las bases camufladas de la alianza rebelde, Luke Skywalker, en compañía de R2D2, parte hacia el planeta Dagobah en busca de Yoda, el último maestro Jedi, para que le enseñe los secretos de la Fuerza. Mientras, Han Solo, la princesa Leia, Chewbacca, y C3PO esquivan a las fuerzas imperiales y piden refugio al antiguo propietario del Halcón Milenario, Lando Calrissian, en la ciudad minera de Bespin, donde les prepara una trampa urdida por Darth Vader.",
     "anio_estreno": 1980,
     "poster_url": "https://image.tmdb.org/t/p/w500/eU7KcNAOeZj9PBIcGUMSsuJz8qj.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/k9pshruhCpJAdH9RaGJO6jaWQ4X.jpg",
     "clasificacion": "A",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:07.771Z",
+    "creado": "2026-07-17T02:09:11.112Z",
     "generos": [
       1,
       2,
@@ -937,15 +978,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 102,
+  "pk": 162,
   "fields": {
     "titulo": "Mensajes de voz para Isabelle",
     "sinopsis": "Una joven deja mensajes de voz bastante explícitos a su difunta hermana, sin saber que los recibe un desconocido que comienza a enamorarse de ella.",
     "anio_estreno": 2026,
     "poster_url": "https://image.tmdb.org/t/p/w500/3nY9BG8VjuxwLLRx5BGiiuj0M71.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/2WU6Y6aonzD6uAaCmNnEFlesxxJ.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:08.110Z",
+    "creado": "2026-07-17T02:09:11.373Z",
     "generos": [
       4,
       14
@@ -954,15 +996,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 103,
+  "pk": 163,
   "fields": {
     "titulo": "El castillo ambulante",
     "sinopsis": "Sophie, una joven sobre la que pesa una horrible maldición que le confiere el aspecto de una anciana, decide pedir ayuda al mago Howl, que vive en un castillo ambulante, pero tal vez sea Howl quien necesite la ayuda de Sophie.",
     "anio_estreno": 2004,
     "poster_url": "https://image.tmdb.org/t/p/w500/p8EARnEw8KPZzlZg3vkseYVMczu.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/nv5wwZou159v5OC61i4ElR7OqyY.jpg",
     "clasificacion": "7",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:08.348Z",
+    "creado": "2026-07-17T02:09:11.942Z",
     "generos": [
       3,
       2,
@@ -972,15 +1015,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 104,
+  "pk": 164,
   "fields": {
     "titulo": "So Won",
     "sinopsis": "Una niña llamada So Won se convierte en víctima de la violencia. Su familia pasa por la desesperación y el dolor al intentar abrir otra puerta en su vida.",
     "anio_estreno": 2013,
     "poster_url": "https://image.tmdb.org/t/p/w500/PZlNvDwKwHeHUsXnd6SEDXWZNn.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/4Nx40jwpoTHPjCWNGoaZ6kaoGxa.jpg",
     "clasificacion": "",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:08.619Z",
+    "creado": "2026-07-17T02:09:12.175Z",
     "generos": [
       7
     ]
@@ -988,15 +1032,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 105,
+  "pk": 165,
   "fields": {
     "titulo": "Gabriel's Inferno",
     "sinopsis": "El enigmático y atractivo profesor Gabriel Emerson, reconocido especialista en Dante, es un hombre torturado por su pasado y orgulloso del prestigio que ha conseguido, aunque también es consciente de que es un imán para el pecado y, en especial, para la lujuria.",
     "anio_estreno": 2020,
     "poster_url": "https://image.tmdb.org/t/p/w500/oyG9TL7FcRP4EZ9Vid6uKzwdndz.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/nIkcTtuhmkl1GZO2LfZi7SwFz7F.jpg",
     "clasificacion": "",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:08.871Z",
+    "creado": "2026-07-17T02:09:13.276Z",
     "generos": [
       7,
       14
@@ -1005,15 +1050,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 106,
+  "pk": 166,
   "fields": {
     "titulo": "Así aprenderás",
     "sinopsis": "Unos inspectores insólitos entran en escena en los colegios, con lecciones duras de las que no aparecen en los libros de texto, para acabar con las reiteradas faltas de respeto.",
     "anio_estreno": 2026,
     "poster_url": "https://image.tmdb.org/t/p/w500/lG83nWVT7cHl3nSxonaYhOjqyWH.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/vyG93jhmPL7tBIhRtCLa5mdBKob.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:09.316Z",
+    "creado": "2026-07-17T02:09:13.862Z",
     "generos": [
       20,
       4,
@@ -1023,15 +1069,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 107,
+  "pk": 167,
   "fields": {
     "titulo": "Rancho Dutton",
     "sinopsis": "Rip y Beth Dutton están construyendo una nueva vida en el sur de Texas junto al joven Carter, pero la promesa de un futuro lejos de Yellowstone choca con duras realidades y con un rancho rival que no se detendrá ante nada para proteger su imperio.",
     "anio_estreno": 2026,
     "poster_url": "https://image.tmdb.org/t/p/w500/4KTqlq5jwt53LoZdP8ui33TpFaq.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/wh5agdl3b7fqC7mSjsCkHx4fMAs.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:09.598Z",
+    "creado": "2026-07-17T02:09:14.136Z",
     "generos": [
       7,
       19
@@ -1040,15 +1087,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 108,
+  "pk": 168,
   "fields": {
     "titulo": "Los SUPERfrikis",
     "sinopsis": "En esta disparatada comedia de acción, un grupo de vecinos de lo más pintoresco adquieren superpoderes por accidente y luchan contra el mal en plena histeria apocalíptica.",
     "anio_estreno": 2026,
     "poster_url": "https://image.tmdb.org/t/p/w500/zEZuIW4UDU9OHTwN7zMf8BE5tOF.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/810mXC0xkxXVtoKIPGGVgO9PuLh.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:09.930Z",
+    "creado": "2026-07-17T02:09:14.378Z",
     "generos": [
       20,
       4,
@@ -1059,15 +1107,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 109,
+  "pk": 169,
   "fields": {
     "titulo": "Breaking Bad",
     "sinopsis": "Un profesor de química con cáncer terminal se asocia con un exalumno suyo para fabricar y vender metanfetamina a fin de que su familia no pase apuros económicos.",
     "anio_estreno": 2008,
     "poster_url": "https://image.tmdb.org/t/p/w500/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:10.150Z",
+    "creado": "2026-07-17T02:09:14.844Z",
     "generos": [
       5,
       7
@@ -1076,15 +1125,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 110,
+  "pk": 170,
   "fields": {
     "titulo": "Off Campus",
     "sinopsis": "Hannah Wells hace un trato con el capitán de hockey Garrett Graham: ella le da clase de filosofía y él la ayuda a conquistar al chico que le gusta. Su acuerdo se convierte en una auténtica conexión cuando ambos se enfrentan a su pasado.",
     "anio_estreno": 2026,
     "poster_url": "https://image.tmdb.org/t/p/w500/pI4sEVVbswtyOL2uaFxZs2tPOnQ.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/52sp0vPhLOWrZ1QoZIWiapronM.jpg",
     "clasificacion": "18",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:10.405Z",
+    "creado": "2026-07-17T02:09:15.088Z",
     "generos": [
       7
     ]
@@ -1092,15 +1142,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 111,
+  "pk": 171,
   "fields": {
     "titulo": "Frieren: Tras finalizar el viaje",
     "sinopsis": "Décadas después de que su grupo derrotara al Rey Demonio, el funeral de un viejo amigo lleva a la hechicera elfa Frieren a embarcarse en un viaje de autodescubrimiento.",
     "anio_estreno": 2023,
     "poster_url": "https://image.tmdb.org/t/p/w500/3NyQpXmkaBVWgYM8miDHEFqGMCB.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/rBOnrVlck7BIlGeWVlzYiZeg4l2.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:10.649Z",
+    "creado": "2026-07-17T02:09:15.348Z",
     "generos": [
       20,
       3,
@@ -1111,15 +1162,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 112,
+  "pk": 172,
   "fields": {
     "titulo": "Avatar: La leyenda de Aang",
     "sinopsis": "La historia transcurre en un mundo de gente principalmente asiática (el estilo de vida en la serie se basa en la primera mitad del siglo XIX), donde predominan las artes marciales y la manipulación de los elementos en combinación con el misticismo oriental, dando seguimiento a las aventuras de Aang, el más reciente sucesor de una larga línea de avatares, y sus amigos en un intento por salvar su místico mundo de la despiadada Nación del Fuego que busca conquistar a las demás naciones. Durante sus travesías son acechados insistentemente por el desterrado príncipe del fuego Zuko, cuyo objetivo es capturar al avatar para recuperar su honor. Esta serie es presentada como si se tratara de una serie de libros, en donde cada episodio actúa como un «capítulo», y cada temporada como un solo «libro», los cuales se titulan por el elemento temático de la temporada.",
     "anio_estreno": 2005,
     "poster_url": "https://image.tmdb.org/t/p/w500/ucNtkZfpZ6KgxqPo039nN4LAyFR.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/kU98MbVVgi72wzceyrEbClZmMFe.jpg",
     "clasificacion": "7",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:10.909Z",
+    "creado": "2026-07-17T02:09:15.617Z",
     "generos": [
       20,
       3,
@@ -1129,15 +1181,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 113,
+  "pk": 173,
   "fields": {
     "titulo": "The Chosen (Los elegidos)",
     "sinopsis": "Por primera vez, la historia más grande jamás contada se presenta en una serie de varias temporadas. Enfocada en los personajes y el contexto histórico de los Evangelios, la primera temporada del mayor proyecto audiovisual producido mediante crowdfunding nos muestra a personas como Pedro, Nicodemo, María Magdalena, Mateo y, por supuesto, Jesús, de una manera nunca vista antes en pantalla. La serie muestra la parte más auténtica e íntima de la vida y el ministerio de una de las figuras más importantes e influyentes de la Historia de la humanidad.",
     "anio_estreno": 2019,
     "poster_url": "https://image.tmdb.org/t/p/w500/sADRlqLn9na8p7S1mLWMOU04uit.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/3siv3RaQrdr2tQiv9jHq71sLlzo.jpg",
     "clasificacion": "7",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:11.100Z",
+    "creado": "2026-07-17T02:09:15.896Z",
     "generos": [
       20,
       7,
@@ -1147,15 +1200,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 114,
+  "pk": 174,
   "fields": {
     "titulo": "Si la vida te da mandarinas...",
     "sinopsis": "En la isla de Jeju, una chica llena de vida y un joven decidido viven una historia repleta de desafíos y triunfos que demuestra que el amor puede trascender el tiempo.",
     "anio_estreno": 2025,
     "poster_url": "https://image.tmdb.org/t/p/w500/h3Sv1qMAc6ADS6xWoIrUAzdXarf.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/a9qlroMOHewiDsUR93PYMVfpbF5.jpg",
     "clasificacion": "12",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:11.359Z",
+    "creado": "2026-07-17T02:09:16.330Z",
     "generos": [
       7
     ]
@@ -1163,15 +1217,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 115,
+  "pk": 175,
   "fields": {
     "titulo": "Arcane",
     "sinopsis": "Con las dispares ciudades de Piltover y Zaun como telón de fondo, dos hermanas luchan en bandos opuestos de una guerra entre tecnologías mágicas y creencias enfrentadas.",
     "anio_estreno": 2021,
     "poster_url": "https://image.tmdb.org/t/p/w500/abf8tHznhSvl9BAElD2cQeRr7do.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/q8eejQcg1bAqImEV8jh8RtBD4uH.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:11.621Z",
+    "creado": "2026-07-17T02:09:16.560Z",
     "generos": [
       20,
       3,
@@ -1181,15 +1236,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 116,
+  "pk": 176,
   "fields": {
     "titulo": "Más que rivales",
     "sinopsis": "Dos de las mayores estrellas de la Major League Hockey están unidas por la ambición, la rivalidad y una atracción magnética que ninguna de las dos comprende del todo. Lo que comienza como una aventura secreta entre dos novatos se convierte en un viaje de años de amor, negación y autodescubrimiento. Durante los siguientes ocho años, mientras buscan la gloria sobre el hielo, luchan por comprender sus sentimientos mutuos. Divididos entre el deporte que les apasiona y el amor que no pueden ignorar, deben decidir si hay espacio en su mundo ferozmente competitivo para algo tan frágil —y poderoso— como el amor verdadero.",
     "anio_estreno": 2025,
     "poster_url": "https://image.tmdb.org/t/p/w500/rFZLFbuAOIQGZxXJT9XWhE87XMY.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/iS76c29IrS3lKI2X5CFySguiAWU.jpg",
     "clasificacion": "TV-MA",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:11.872Z",
+    "creado": "2026-07-17T02:09:16.782Z",
     "generos": [
       7
     ]
@@ -1197,15 +1253,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 117,
+  "pk": 177,
   "fields": {
     "titulo": "Respuesta 1988",
     "sinopsis": "Answer Me 1988: Los tiempos pueden haber sido un poco más simples, menos tecnológicos, pero aún así era igual de difícil sobrellevar un día típico en la vida a finales de 1980. Cinco amigos de la infancia, que viven todos en el mismo barrio Ssangmundong de Seúl, se apoyan mutuamente para sobrevivir la compleja adolescencia y forjarse un camino para el futuro. Sung Deok Sol (Hyeri) lucha por atención siendo el hijo del medio en su pobre familia, mientras que también lleva el peso de tener el lugar 989o en la escuela. Kim Jung Hwan (Ryu Joon Yeol) solamente tiene una cosa en mente, el fútbol, ​​incluso después de que su familia se vuelve rica de la noche a la mañana. Sung Woo Sun (Ko Gyung Pyo) es el estudiante perfecto, Presidente del Consejo Estudiantil y un hijo atento y confiable en su familia. Ryu Dong Ryong (Lee Dong Hwi) es un geek que sabe más sobre las niñas y la vida que el resto de sus amigos, pero su mala calificación académica le impide poder ir a la universidad. Choi Taek (Park Bo Gum) es un jugador genio de Go, que dejó la escuela para convertirse en profesional. A medida que el grupo de amigos se mete y sale de travesuras en el barrio, ¿qué experiencias de estos tiempos memorables juntos se van a llevar con ellos a su vida futura?",
     "anio_estreno": 2015,
     "poster_url": "https://image.tmdb.org/t/p/w500/lZo7G1kEU70PHP1dCe46I0cUKiF.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/sZH7lGs06skRKkrqp1LRi57VVMb.jpg",
     "clasificacion": "13",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:12.133Z",
+    "creado": "2026-07-17T02:09:17.008Z",
     "generos": [
       4
     ]
@@ -1213,15 +1270,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 118,
+  "pk": 178,
   "fields": {
     "titulo": "One Piece",
     "sinopsis": "Esta historia se sitúa en el momento más álgido de la Gran Era de los Piratas, cuando el joven Monkey D. Luffy quiere llegar a ser el Rey de los Piratas y hacerse al fin con un legendario tesoro, el One Piece.",
     "anio_estreno": 1999,
     "poster_url": "https://image.tmdb.org/t/p/w500/frwoK0POcZ8wtW4Uu2pJLx1kpwp.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/2rmK7mnchw9Xr3XdiTFSxTTLXqv.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:12.379Z",
+    "creado": "2026-07-17T02:09:17.337Z",
     "generos": [
       20,
       3,
@@ -1231,15 +1289,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 119,
+  "pk": 179,
   "fields": {
     "titulo": "The Pitt",
     "sinopsis": "The Pitt ofrece una visión realista de los retos a los que se enfrenta el personal sanitario en los Estados Unidos de hoy, visto a través de la lente de los héroes de primera línea que trabajan en un hospital de la actualidad en Pittsburgh, Pensilvania.",
     "anio_estreno": 2025,
     "poster_url": "https://image.tmdb.org/t/p/w500/kvFSpESyBZMjaeOJDx7RS3P1jey.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/z3BkMbCy5ajZPMyKEUwsPHuz2cV.jpg",
     "clasificacion": "16",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:12.693Z",
+    "creado": "2026-07-17T02:09:17.626Z",
     "generos": [
       7
     ]
@@ -1247,15 +1306,16 @@
 },
 {
   "model": "catalog.contenidoaudiovisual",
-  "pk": 120,
+  "pk": 180,
   "fields": {
     "titulo": "Un héroe débil",
     "sinopsis": "Yeon Shi Eun, un estudiante modelo con calificaciones que pertenecen al 1% superior de la escuela. Se ve débil pero lucha contra numerosas violencias dentro y fuera de la escuela. Representa a un chico naturalmente débil en términos de apariencia, dominando una escuela parecida a una jungla usando su cerebro, poder analítico y herramientas.",
     "anio_estreno": 2022,
     "poster_url": "https://image.tmdb.org/t/p/w500/wmYQAByUOf3mQp0xOQa0Xkf5ea1.jpg",
+    "backdrop_url": "https://image.tmdb.org/t/p/w1280/q5mJ4oKfGc6Cr9reIHFzD0pQzre.jpg",
     "clasificacion": "TV-MA",
     "estado": "PUBLICADO",
-    "creado": "2026-07-17T01:03:12.929Z",
+    "creado": "2026-07-17T02:09:17.917Z",
     "generos": [
       20,
       7
@@ -1264,322 +1324,322 @@
 },
 {
   "model": "catalog.pelicula",
-  "pk": 99,
+  "pk": 159,
   "fields": {
     "duracion_min": 130
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 97,
+  "pk": 157,
   "fields": {
     "duracion_min": 133
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 63,
+  "pk": 123,
   "fields": {
     "duracion_min": 143
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 84,
+  "pk": 144,
   "fields": {
     "duracion_min": 100
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 92,
+  "pk": 152,
   "fields": {
     "duracion_min": 155
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 93,
+  "pk": 153,
   "fields": {
     "duracion_min": 130
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 98,
+  "pk": 158,
   "fields": {
     "duracion_min": 88
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 70,
+  "pk": 130,
   "fields": {
     "duracion_min": 114
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 69,
+  "pk": 129,
   "fields": {
     "duracion_min": 92
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 82,
+  "pk": 142,
   "fields": {
     "duracion_min": 161
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 72,
+  "pk": 132,
   "fields": {
     "duracion_min": 152
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 103,
+  "pk": 163,
   "fields": {
     "duracion_min": 120
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 90,
+  "pk": 150,
   "fields": {
     "duracion_min": 139
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 101,
+  "pk": 161,
   "fields": {
     "duracion_min": 124
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 65,
+  "pk": 125,
   "fields": {
     "duracion_min": 175
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 67,
+  "pk": 127,
   "fields": {
     "duracion_min": 200
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 77,
+  "pk": 137,
   "fields": {
     "duracion_min": 202
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 91,
+  "pk": 151,
   "fields": {
     "duracion_min": 179
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 94,
+  "pk": 154,
   "fields": {
     "duracion_min": 180
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 71,
+  "pk": 131,
   "fields": {
     "duracion_min": 122
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 83,
+  "pk": 143,
   "fields": {
     "duracion_min": 142
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 105,
+  "pk": 165,
   "fields": {
     "duracion_min": 122
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 88,
+  "pk": 148,
   "fields": {
     "duracion_min": 133
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 73,
+  "pk": 133,
   "fields": {
     "duracion_min": 90
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 62,
+  "pk": 122,
   "fields": {
     "duracion_min": 102
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 80,
+  "pk": 140,
   "fields": {
     "duracion_min": 169
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 68,
+  "pk": 128,
   "fields": {
     "duracion_min": 195
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 75,
+  "pk": 135,
   "fields": {
     "duracion_min": 189
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 87,
+  "pk": 147,
   "fields": {
     "duracion_min": 95
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 89,
+  "pk": 149,
   "fields": {
     "duracion_min": 117
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 86,
+  "pk": 146,
   "fields": {
     "duracion_min": 207
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 102,
+  "pk": 162,
   "fields": {
     "duracion_min": 119
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 64,
+  "pk": 124,
   "fields": {
     "duracion_min": 128
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 96,
+  "pk": 156,
   "fields": {
     "duracion_min": 104
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 78,
+  "pk": 138,
   "fields": {
     "duracion_min": 132
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 66,
+  "pk": 126,
   "fields": {
     "duracion_min": 157
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 95,
+  "pk": 155,
   "fields": {
     "duracion_min": 109
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 81,
+  "pk": 141,
   "fields": {
     "duracion_min": 154
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 104,
+  "pk": 164,
   "fields": {
     "duracion_min": 123
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 61,
+  "pk": 121,
   "fields": {
     "duracion_min": 110
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 100,
+  "pk": 160,
   "fields": {
     "duracion_min": 116
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 74,
+  "pk": 134,
   "fields": {
     "duracion_min": 189
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 85,
+  "pk": 145,
   "fields": {
     "duracion_min": 146
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 79,
+  "pk": 139,
   "fields": {
     "duracion_min": 106
   }
 },
 {
   "model": "catalog.pelicula",
-  "pk": 76,
+  "pk": 136,
   "fields": {
     "duracion_min": 100
   }
 },
 {
   "model": "catalog.serie",
-  "pk": 115,
+  "pk": 175,
   "fields": {
     "num_temporadas": 2,
     "num_episodios": 18,
@@ -1588,7 +1648,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 106,
+  "pk": 166,
   "fields": {
     "num_temporadas": 1,
     "num_episodios": 10,
@@ -1597,7 +1657,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 112,
+  "pk": 172,
   "fields": {
     "num_temporadas": 3,
     "num_episodios": 61,
@@ -1606,7 +1666,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 109,
+  "pk": 169,
   "fields": {
     "num_temporadas": 5,
     "num_episodios": 62,
@@ -1615,7 +1675,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 111,
+  "pk": 171,
   "fields": {
     "num_temporadas": 1,
     "num_episodios": 38,
@@ -1624,7 +1684,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 108,
+  "pk": 168,
   "fields": {
     "num_temporadas": 1,
     "num_episodios": 8,
@@ -1633,7 +1693,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 116,
+  "pk": 176,
   "fields": {
     "num_temporadas": 1,
     "num_episodios": 6,
@@ -1642,7 +1702,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 110,
+  "pk": 170,
   "fields": {
     "num_temporadas": 1,
     "num_episodios": 8,
@@ -1651,7 +1711,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 118,
+  "pk": 178,
   "fields": {
     "num_temporadas": 23,
     "num_episodios": 1170,
@@ -1660,7 +1720,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 107,
+  "pk": 167,
   "fields": {
     "num_temporadas": 1,
     "num_episodios": 9,
@@ -1669,7 +1729,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 117,
+  "pk": 177,
   "fields": {
     "num_temporadas": 1,
     "num_episodios": 20,
@@ -1678,7 +1738,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 114,
+  "pk": 174,
   "fields": {
     "num_temporadas": 1,
     "num_episodios": 16,
@@ -1687,7 +1747,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 113,
+  "pk": 173,
   "fields": {
     "num_temporadas": 6,
     "num_episodios": 47,
@@ -1696,7 +1756,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 119,
+  "pk": 179,
   "fields": {
     "num_temporadas": 3,
     "num_episodios": 30,
@@ -1705,7 +1765,7 @@
 },
 {
   "model": "catalog.serie",
-  "pk": 120,
+  "pk": 180,
   "fields": {
     "num_temporadas": 2,
     "num_episodios": 16,
