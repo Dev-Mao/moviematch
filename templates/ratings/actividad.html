@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Actividad · MovieMatch{% endblock %}
+{% block page_title %}Actividad de amigos{% endblock %}
+{% block page_subtitle %}Lo último que han valorado las personas que sigues{% endblock %}
+
+{% block content %}
+  <div class="row" style="align-items:flex-start;gap:24px">
+
+    <div class="col grow">
+      <div class="row row--wrap">
+        <a class="chip {% if not filtro_amigo %}chip--active{% endif %}" href="{% url 'ratings:actividad' %}">Todos</a>
+        {% for amigo in amigos %}
+          <a class="chip {% if filtro_amigo == amigo.id|stringformat:'s' %}chip--active{% endif %}"
+             href="?amigo={{ amigo.id }}">{{ amigo.first_name }}</a>
+        {% endfor %}
+      </div>
+
+      {% for v in valoraciones %}
+        <div class="card row" style="align-items:flex-start;gap:14px">
+          <div class="avatar avatar--sm">{{ v.usuario.perfil.iniciales }}</div>
+          <div class="grow col" style="gap:8px">
+            <div class="row row--between">
+              <div class="row" style="gap:6px">
+                <strong>{{ v.usuario.get_full_name }}</strong>
+                <span class="muted">valoró</span>
+                <a href="{% url 'catalog:detalle' v.contenido.id %}"><strong>{{ v.contenido.titulo }}</strong></a>
+              </div>
+              <span class="muted small">hace {{ v.fecha|timesince }}</span>
+            </div>
+            <div class="row" style="gap:12px">
+              {% if v.contenido.poster_url %}
+                <img src="{{ v.contenido.poster_url }}" alt="" loading="lazy"
+                     style="width:46px;height:64px;object-fit:cover;border-radius:6px">
+              {% endif %}
+              <div class="col" style="gap:4px">
+                <span class="stars">{% for llena in v.estrellas %}{% if llena %}★{% else %}<span class="stars--off">★</span>{% endif %}{% endfor %}</span>
+                {% if v.comentario %}<p class="muted small" style="margin:0">«{{ v.comentario }}»</p>{% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% empty %}
+        <div class="empty">
+          <div class="empty__icon">⚡</div>
+          <div class="empty__title">Sin actividad todavía</div>
+          <p>Cuando tus amigos valoren contenido, aparecerá aquí.</p>
+          <a class="btn btn--outline" href="{% url 'accounts:amigos' %}" style="margin-top:12px">Agregar amigos</a>
+        </div>
+      {% endfor %}
+    </div>
+
+    <section class="card" style="width:320px;flex-shrink:0">
+      <h2 class="card__title">Popular entre tus amigos</h2>
+      {% for c in populares %}
+        <a href="{% url 'catalog:detalle' c.id %}" class="row" style="gap:12px;padding:8px 0;color:inherit">
+          <strong class="muted">{{ forloop.counter }}</strong>
+          {% if c.poster_url %}
+            <img src="{{ c.poster_url }}" alt="" loading="lazy"
+                 style="width:38px;height:52px;object-fit:cover;border-radius:6px">
+          {% endif %}
+          <div class="grow">
+            <div class="small"><strong>{{ c.titulo }}</strong></div>
+            <div class="muted small">{{ c.cuantos }} amigo{{ c.cuantos|pluralize }} lo valoró</div>
+          </div>
+        </a>
+      {% empty %}
+        <p class="muted small">Sin datos todavía.</p>
+      {% endfor %}
+    </section>
+
+  </div>
+{% endblock %}

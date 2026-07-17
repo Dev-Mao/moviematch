@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Amigos · MovieMatch{% endblock %}
+{% block page_title %}Amigos{% endblock %}
+{% block page_subtitle %}Conecta y comparte recomendaciones con tu círculo{% endblock %}
+
+{% block topbar_actions %}
+  <form class="search" method="get" style="width:280px">
+    <span>🔍</span>
+    <input type="search" name="q" value="{{ busqueda }}" placeholder="Buscar usuarios…">
+  </form>
+{% endblock %}
+
+{% block content %}
+
+  {% if busqueda %}
+    <section class="col">
+      <h2 class="section-title">Resultados para «{{ busqueda }}»</h2>
+      {% for persona in resultados %}
+        <div class="card row row--between">
+          <div class="row">
+            <div class="avatar avatar--sm">{{ persona.perfil.iniciales }}</div>
+            <div>
+              <strong>{{ persona.get_full_name }}</strong>
+              <div class="muted small">@{{ persona.perfil.alias }}</div>
+            </div>
+          </div>
+          <form method="post" action="{% url 'accounts:enviar_solicitud' persona.id %}">
+            {% csrf_token %}
+            <button class="btn btn--primary btn--sm" type="submit">+ Agregar</button>
+          </form>
+        </div>
+      {% empty %}
+        <div class="empty"><p>Sin usuarios nuevos para «{{ busqueda }}».</p></div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  {% if pendientes %}
+    <section class="col">
+      <h2 class="section-title">Solicitudes pendientes · {{ pendientes|length }}</h2>
+      {% for amistad in pendientes %}
+        <div class="card row row--between">
+          <div class="row">
+            <div class="avatar avatar--sm">{{ amistad.solicitante.perfil.iniciales }}</div>
+            <div>
+              <strong>{{ amistad.solicitante.get_full_name }}</strong>
+              <div class="muted small">@{{ amistad.solicitante.perfil.alias }}</div>
+            </div>
+          </div>
+          <div class="row">
+            <form method="post" action="{% url 'accounts:responder_solicitud' amistad.id 'aceptar' %}">
+              {% csrf_token %}<button class="btn btn--primary btn--sm" type="submit">Aceptar</button>
+            </form>
+            <form method="post" action="{% url 'accounts:responder_solicitud' amistad.id 'rechazar' %}">
+              {% csrf_token %}<button class="btn btn--outline btn--sm" type="submit">Rechazar</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    </section>
+  {% endif %}
+
+  <section class="col">
+    <h2 class="section-title">Tus amigos · {{ amigos|length }}</h2>
+    {% if amigos %}
+      <div class="grid grid--cards">
+        {% for amigo in amigos %}
+          <div class="card row row--between">
+            <div class="row">
+              <div class="avatar avatar--sm">{{ amigo.perfil.iniciales }}</div>
+              <div>
+                <strong>{{ amigo.get_full_name }}</strong>
+                <div class="muted small">@{{ amigo.perfil.alias }}</div>
+              </div>
+            </div>
+            <form method="post" action="{% url 'accounts:eliminar_amistad' amigo.id %}">
+              {% csrf_token %}
+              <button class="btn btn--outline btn--sm" type="submit">Eliminar</button>
+            </form>
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty">
+        <div class="empty__icon">👥</div>
+        <div class="empty__title">Todavía no tienes amigos</div>
+        <p>Busca usuarios arriba para enviarles una solicitud.</p>
+      </div>
+    {% endif %}
+  </section>
+
+{% endblock %}
