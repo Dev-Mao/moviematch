@@ -127,3 +127,16 @@ LOGOUT_REDIRECT_URL = "accounts:login"
 # RN-03: bloqueo temporal tras varios intentos fallidos de inicio de sesión.
 LOGIN_MAX_ATTEMPTS = 5
 LOGIN_LOCKOUT_MINUTES = 15
+
+
+# Endurecimiento de seguridad en producción (se activa cuando DEBUG es False).
+if not DEBUG:
+    # PythonAnywhere termina el TLS y reenvía la petición con esta cabecera.
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 31536000  # un año
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
