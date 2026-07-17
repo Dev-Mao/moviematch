@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Catálogo · MovieMatch{% endblock %}
+{% block page_title %}Explorar catálogo{% endblock %}
+{% block page_subtitle %}{{ total }} título{{ total|pluralize }} disponible{{ total|pluralize }}{% endblock %}
+
+{% block content %}
+
+  <form method="get" class="col" style="gap:16px">
+    <div class="search">
+      <span>🔍</span>
+      <input type="search" name="q" value="{{ busqueda }}" placeholder="Buscar por título o sinopsis…">
+      <button type="submit" class="btn btn--primary btn--sm">Buscar</button>
+    </div>
+
+    <div class="row row--wrap">
+      <select name="genero" class="input" style="width:auto" onchange="this.form.submit()">
+        <option value="">Todos los géneros</option>
+        {% for genero in generos %}
+          <option value="{{ genero.slug }}" {% if genero.slug == genero_slug %}selected{% endif %}>
+            {{ genero.nombre }}
+          </option>
+        {% endfor %}
+      </select>
+
+      <select name="tipo" class="input" style="width:auto" onchange="this.form.submit()">
+        <option value="">Películas y series</option>
+        <option value="pelicula" {% if tipo == 'pelicula' %}selected{% endif %}>Solo películas</option>
+        <option value="serie" {% if tipo == 'serie' %}selected{% endif %}>Solo series</option>
+      </select>
+
+      <select name="orden" class="input" style="width:auto" onchange="this.form.submit()">
+        <option value="valoradas" {% if orden == 'valoradas' %}selected{% endif %}>Más valoradas</option>
+        <option value="recientes" {% if orden == 'recientes' %}selected{% endif %}>Más recientes</option>
+        <option value="titulo" {% if orden == 'titulo' %}selected{% endif %}>Por título</option>
+      </select>
+
+      {% if busqueda or genero_slug or tipo %}
+        <a href="{% url 'catalog:catalogo' %}" class="chip">Limpiar filtros ✕</a>
+      {% endif %}
+    </div>
+  </form>
+
+  {% if pagina.object_list %}
+    <div class="grid grid--posters">
+      {% for contenido in pagina %}
+        {% include "partials/poster.html" with contenido=contenido puntaje=contenido.promedio meta=contenido.anio_estreno %}
+      {% endfor %}
+    </div>
+
+    {% if pagina.has_other_pages %}
+      <div class="row" style="justify-content:center;gap:8px">
+        {% if pagina.has_previous %}
+          <a class="chip" href="?{% if busqueda %}q={{ busqueda }}&{% endif %}pagina={{ pagina.previous_page_number }}">‹ Anterior</a>
+        {% endif %}
+        <span class="muted small">Página {{ pagina.number }} de {{ pagina.paginator.num_pages }}</span>
+        {% if pagina.has_next %}
+          <a class="chip" href="?{% if busqueda %}q={{ busqueda }}&{% endif %}pagina={{ pagina.next_page_number }}">Siguiente ›</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% else %}
+    <div class="empty">
+      <div class="empty__icon">🔍</div>
+      <div class="empty__title">Sin resultados</div>
+      <p>No encontramos nada para «{{ busqueda }}». Prueba con otro término o quita los filtros.</p>
+      <a class="btn btn--outline" href="{% url 'catalog:catalogo' %}" style="margin-top:12px">Ver todo el catálogo</a>
+    </div>
+  {% endif %}
+
+{% endblock %}

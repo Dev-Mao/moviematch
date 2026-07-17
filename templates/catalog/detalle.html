@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% block title %}{{ contenido.titulo }} · MovieMatch{% endblock %}
+
+{% block topbar %}
+  <div class="topbar">
+    <a href="{% url 'catalog:catalogo' %}" class="muted">← Volver al catálogo</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <section style="position:relative;border-radius:var(--radius-m);overflow:hidden;padding:32px;
+                  background:var(--card-elevated)">
+    {% if contenido.poster_url %}
+      <div style="position:absolute;inset:0;background-image:url('{{ contenido.poster_url }}');
+                  background-size:cover;background-position:center;opacity:.25"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(0deg,var(--background),rgba(31,38,50,.5))"></div>
+    {% endif %}
+
+    <div class="row" style="position:relative;align-items:flex-end;gap:28px">
+      <div style="width:200px;flex-shrink:0;border-radius:var(--radius-m);overflow:hidden;
+                  border:1px solid var(--border);background:var(--card)">
+        {% if contenido.poster_url %}
+          <img src="{{ contenido.poster_url }}" alt="{{ contenido.titulo }}">
+        {% endif %}
+      </div>
+
+      <div class="col grow">
+        <h1 style="font-size:40px;font-weight:700">{{ contenido.titulo }}</h1>
+        <div class="row row--wrap" style="gap:8px">
+          <span class="badge">{{ contenido.anio_estreno }}</span>
+          <span class="badge">{{ contenido.tipo }}</span>
+          {% for genero in contenido.generos.all %}<span class="badge">{{ genero.nombre }}</span>{% endfor %}
+          {% if detalle_tipo.duracion_min %}<span class="badge">{{ detalle_tipo.duracion_min }} min</span>{% endif %}
+          {% if detalle_tipo.num_temporadas %}
+            <span class="badge">{{ detalle_tipo.num_temporadas }} temporada{{ detalle_tipo.num_temporadas|pluralize }}</span>
+          {% endif %}
+          {% if contenido.clasificacion %}<span class="badge">{{ contenido.clasificacion }}</span>{% endif %}
+          {% if contenido.estado == 'RETIRADO' %}
+            <span class="badge"><span class="badge__dot badge__dot--error"></span>Retirado</span>
+          {% endif %}
+        </div>
+        {% if promedio %}
+          <div class="row">
+            <span class="stars">★</span>
+            <strong>{{ promedio }}</strong>
+            <span class="muted small">· {{ total_valoraciones }} valoración{{ total_valoraciones|pluralize:"es" }}</span>
+          </div>
+        {% else %}
+          <span class="muted small">Todavía sin valoraciones</span>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <div class="row" style="align-items:flex-start;gap:28px">
+
+    <div class="col grow" style="gap:24px">
+      <section class="col">
+        <h2 class="section-title">Sinopsis</h2>
+        <p class="muted" style="line-height:1.6">{{ contenido.sinopsis|default:"Sin sinopsis disponible." }}</p>
+      </section>
+
+      <section class="card" id="valorar">
+        <h2 class="card__title">Tu valoración</h2>
+        <form method="post" action="{% url 'ratings:valorar' contenido.id %}" class="col">
+          {% csrf_token %}
+          <div class="row" style="gap:6px">
+            {% for i in rango %}
+              <label style="cursor:pointer">
+                <input type="radio" name="puntuacion" value="{{ i }}" class="hidden"
+                       {% if mi_valoracion.puntuacion == i %}checked{% endif %} required>
+                <span class="stars stars--lg {% if not mi_valoracion or i > mi_valoracion.puntuacion %}stars--off{% endif %}"
+                      onclick="this.closest('label').querySelector('input').checked = true;
+                               document.querySelectorAll('#valorar .stars--lg').forEach(function(s, idx){
+                                 s.classList.toggle('stars--off', idx >= {{ i }});
+                               });">★</span>
+              </label>
+            {% endfor %}
+          </div>
+          <div class="field">
+            <textarea name="comentario" placeholder="Escribe un comentario (opcional)…">{{ mi_valoracion.comentario|default:'' }}</textarea>
+          </div>
+          <div class="row">
+            <button type="submit" class="btn btn--primary">
+              {% if mi_valoracion %}Actualizar valoración{% else %}Guardar valoración{% endif %}
+            </button>
+            {% if mi_valoracion %}
+              <button type="submit" class="btn btn--danger btn--sm"
+                      formaction="{% url 'ratings:eliminar' contenido.id %}">Eliminar</button>
+            {% endif %}
+          </div>
+        </form>
+      </section>
+
+      {% if mis_listas %}
+        <section class="card">
+          <h2 class="card__title">Agregar a una lista</h2>
+          <div class="col">
+            {% for lista in mis_listas %}
+              <form method="post" action="{% url 'lists:agregar_contenido' lista.id %}" class="row row--between">
+                {% csrf_token %}
+                <input type="hidden" name="contenido_id" value="{{ contenido.id }}">
+                <span>{{ lista.nombre }} <span class="muted small">· {{ lista.visibilidad }}</span></span>
+                <button type="submit" class="btn btn--outline btn--sm">+ Agregar</button>
+              </form>
+            {% endfor %}
+          </div>
+        </section>
+      {% endif %}
+    </div>
+
+    <div class="col" style="width:380px;flex-shrink:0;gap:20px">
+      <section class="card">
+        <h2 class="card__title">Ficha técnica</h2>
+        <div class="col" style="gap:10px">
+          <div class="row row--between"><span class="muted">Tipo</span><strong>{{ contenido.tipo }}</strong></div>
+          <div class="row row--between"><span class="muted">Año</span><strong>{{ contenido.anio_estreno }}</strong></div>
+          <div class="row row--between">
+            <span class="muted">Géneros</span>
+            <strong style="text-align:right">
+              {% for genero in contenido.generos.all %}{{ genero.nombre }}{% if not forloop.last %}, {% endif %}{% endfor %}
+            </strong>
+          </div>
+          {% if detalle_tipo.duracion_min %}
+            <div class="row row--between"><span class="muted">Duración</span><strong>{{ detalle_tipo.duracion_min }} min</strong></div>
+          {% endif %}
+          {% if detalle_tipo.num_episodios %}
+            <div class="row row--between"><span class="muted">Episodios</span><strong>{{ detalle_tipo.num_episodios }}</strong></div>
+            <div class="row row--between">
+              <span class="muted">En emisión</span><strong>{{ detalle_tipo.en_emision|yesno:"Sí,No" }}</strong>
+            </div>
+          {% endif %}
+          {% if contenido.clasificacion %}
+            <div class="row row--between"><span class="muted">Clasificación</span><strong>{{ contenido.clasificacion }}</strong></div>
+          {% endif %}
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 class="card__title">Valoraciones de amigos</h2>
+        {% for v in valoraciones_amigos %}
+          <div class="row" style="align-items:flex-start;gap:10px;padding:10px 0;
+                      {% if not forloop.last %}border-bottom:1px solid var(--border){% endif %}">
+            <div class="avatar avatar--sm">{{ v.usuario.perfil.iniciales }}</div>
+            <div class="grow">
+              <div class="row" style="gap:8px">
+                <strong class="small">{{ v.usuario.get_full_name }}</strong>
+                <span class="stars small">{% for llena in v.estrellas %}{% if llena %}★{% else %}<span class="stars--off">★</span>{% endif %}{% endfor %}</span>
+              </div>
+              {% if v.comentario %}<p class="muted small" style="margin:4px 0 0">«{{ v.comentario }}»</p>{% endif %}
+            </div>
+          </div>
+        {% empty %}
+          <p class="muted small">Ninguno de tus amigos ha valorado este contenido todavía.</p>
+        {% endfor %}
+      </section>
+    </div>
+
+  </div>
+
+{% endblock %}
