@@ -1,0 +1,164 @@
+@startuml entidad-relacion
+title Modelo entidad-relación - MovieMatch (esquema SQLite)
+skinparam shadowing false
+skinparam linetype ortho
+hide circle
+
+entity "auth_user" as user {
+  * id : integer <<PK>>
+  --
+  username : varchar <<unique>>
+  email : varchar
+  first_name : varchar
+  last_name : varchar
+  password : varchar
+  is_staff : bool
+}
+
+entity "accounts_perfil" as perfil {
+  * id : integer <<PK>>
+  --
+  usuario_id : integer <<FK,unique>>
+  alias : varchar <<unique>>
+  avatar_url : varchar
+  biografia : text
+  estado : varchar
+  nivel_acceso : varchar
+}
+
+entity "accounts_preferencia" as preferencia {
+  * id : integer <<PK>>
+  --
+  perfil_id : integer <<FK>>
+  genero_id : integer <<FK>>
+  nivel_interes : smallint
+  <<unique(perfil, genero)>>
+}
+
+entity "accounts_amistad" as amistad {
+  * id : integer <<PK>>
+  --
+  solicitante_id : integer <<FK>>
+  destinatario_id : integer <<FK>>
+  estado : varchar
+  fecha_solicitud : datetime
+  fecha_aceptacion : datetime
+  <<unique(solicitante, destinatario)>>
+}
+
+entity "catalog_genero" as genero {
+  * id : integer <<PK>>
+  --
+  nombre : varchar <<unique>>
+  slug : varchar <<unique>>
+}
+
+entity "catalog_contenidoaudiovisual" as contenido {
+  * id : integer <<PK>>
+  --
+  titulo : varchar
+  sinopsis : text
+  anio_estreno : integer
+  poster_url : varchar
+  backdrop_url : varchar
+  clasificacion : varchar
+  estado : varchar
+}
+
+entity "catalog_contenidoaudiovisual_generos" as cont_gen {
+  * id : integer <<PK>>
+  --
+  contenidoaudiovisual_id : integer <<FK>>
+  genero_id : integer <<FK>>
+}
+
+entity "catalog_pelicula" as pelicula {
+  * contenidoaudiovisual_ptr_id : integer <<PK,FK>>
+  --
+  duracion_min : integer
+}
+
+entity "catalog_serie" as serie {
+  * contenidoaudiovisual_ptr_id : integer <<PK,FK>>
+  --
+  num_temporadas : integer
+  num_episodios : integer
+  en_emision : bool
+}
+
+entity "ratings_valoracion" as valoracion {
+  * id : integer <<PK>>
+  --
+  usuario_id : integer <<FK>>
+  contenido_id : integer <<FK>>
+  puntuacion : smallint
+  comentario : text
+  fecha : datetime
+  <<unique(usuario, contenido)>>
+}
+
+entity "lists_listaderecomendaciones" as lista {
+  * id : integer <<PK>>
+  --
+  propietario_id : integer <<FK>>
+  nombre : varchar
+  descripcion : text
+  es_publica : bool
+  fecha_creacion : datetime
+}
+
+entity "lists_..._contenidos" as lista_cont {
+  * id : integer <<PK>>
+  --
+  listaderecomendaciones_id : integer <<FK>>
+  contenidoaudiovisual_id : integer <<FK>>
+}
+
+entity "lists_..._compartida_con" as lista_comp {
+  * id : integer <<PK>>
+  --
+  listaderecomendaciones_id : integer <<FK>>
+  user_id : integer <<FK>>
+}
+
+entity "recommendations_recomendacion" as recomendacion {
+  * id : integer <<PK>>
+  --
+  usuario_id : integer <<FK>>
+  contenido_id : integer <<FK>>
+  score : real
+  origen : varchar
+  motivo : varchar
+  fecha_generada : datetime
+  <<unique(usuario, contenido)>>
+}
+
+entity "analytics_metricadeuso" as metrica {
+  * id : integer <<PK>>
+  --
+  tipo : varchar
+  valor : real
+  fecha_corte : date
+  <<unique(tipo, fecha_corte)>>
+}
+
+user ||--|| perfil
+perfil ||--o{ preferencia
+genero ||--o{ preferencia
+user ||--o{ amistad : solicitante
+user ||--o{ amistad : destinatario
+contenido ||--o{ cont_gen
+genero ||--o{ cont_gen
+contenido ||--|| pelicula
+contenido ||--|| serie
+user ||--o{ valoracion
+contenido ||--o{ valoracion
+user ||--o{ lista
+lista ||--o{ lista_cont
+contenido ||--o{ lista_cont
+lista ||--o{ lista_comp
+user ||--o{ lista_comp
+user ||--o{ recomendacion
+contenido ||--o{ recomendacion
+
+@enduml

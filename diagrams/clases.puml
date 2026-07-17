@@ -1,0 +1,166 @@
+@startuml clases
+title Diagrama de clases (diseño) - MovieMatch
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+package "Django" {
+  class User <<Django>> {
+    +username : str
+    +email : str
+    +first_name : str
+    +last_name : str
+    +is_staff : bool
+    +check_password()
+  }
+}
+
+package "accounts" {
+  class Perfil {
+    +alias : str
+    +avatar_url : str
+    +biografia : str
+    +estado : EstadoUsuario
+    +nivel_acceso : NivelAcceso
+    --
+    +iniciales() : str
+    +puede_iniciar_sesion() : bool
+  }
+  class Preferencia {
+    +nivel_interes : int  (1..5)
+  }
+  class Amistad {
+    +estado : EstadoAmistad
+    +fecha_solicitud : datetime
+    +fecha_aceptacion : datetime
+    --
+    +aceptar()
+    +rechazar()
+    +otro_usuario(u) : User
+  }
+  class AmistadQuerySet <<Manager>> {
+    +aceptadas()
+    +de_usuario(u)
+  }
+  enum EstadoUsuario {
+    ACTIVO
+    INACTIVO
+    SUSPENDIDO
+  }
+  enum EstadoAmistad {
+    PENDIENTE
+    ACEPTADA
+    RECHAZADA
+    BLOQUEADA
+  }
+}
+
+package "catalog" {
+  abstract class ContenidoAudiovisual {
+    +titulo : str
+    +sinopsis : str
+    +anio_estreno : int
+    +poster_url : str
+    +backdrop_url : str
+    +clasificacion : str
+    +estado : EstadoContenido
+    --
+    +esta_publicado() : bool
+    +tipo() : str
+    +promedio_valoraciones() : float
+  }
+  class Pelicula {
+    +duracion_min : int
+  }
+  class Serie {
+    +num_temporadas : int
+    +num_episodios : int
+    +en_emision : bool
+  }
+  class Genero {
+    +nombre : str
+    +slug : str
+  }
+  enum EstadoContenido {
+    PUBLICADO
+    RETIRADO
+  }
+}
+
+package "ratings" {
+  class Valoracion {
+    +puntuacion : int  (1..5)
+    +comentario : str
+    +fecha : datetime
+    --
+    +estrellas() : list
+  }
+}
+
+package "lists" {
+  class ListaDeRecomendaciones {
+    +nombre : str
+    +descripcion : str
+    +es_publica : bool
+    +fecha_creacion : datetime
+    --
+    +visibilidad() : str
+    +es_visible_para(u) : bool
+  }
+}
+
+package "recommendations" {
+  class Recomendacion {
+    +score : float
+    +origen : Origen
+    +motivo : str
+    +fecha_generada : datetime
+  }
+  class MotorDeRecomendaciones <<Service>> {
+    +generar(limite) : list
+    -_candidatos()
+    -_preferencias()
+    -_afinidad_por_historial()
+    -_valoraciones_de_amigos()
+    -_popularidad()
+    -_explicar()
+  }
+}
+
+package "analytics" {
+  class MetricaDeUso {
+    +tipo : Tipo
+    +valor : float
+    +fecha_corte : date
+  }
+}
+
+' -------------------- Relaciones --------------------
+User "1" -- "1" Perfil : (Administrador = is_staff)
+Perfil "1" -- "*" Preferencia
+Preferencia "*" -- "1" Genero
+Perfil o-- EstadoUsuario
+Amistad o-- EstadoAmistad
+Amistad --> AmistadQuerySet : objects
+User "1" -- "*" Amistad : solicitante/destinatario
+
+ContenidoAudiovisual <|-- Pelicula
+ContenidoAudiovisual <|-- Serie
+ContenidoAudiovisual "*" -- "*" Genero
+ContenidoAudiovisual o-- EstadoContenido
+
+User "1" -- "*" Valoracion
+Valoracion "*" -- "1" ContenidoAudiovisual
+
+User "1" -- "*" ListaDeRecomendaciones
+ListaDeRecomendaciones "*" -- "*" ContenidoAudiovisual
+ListaDeRecomendaciones "*" -- "*" User : compartida_con
+
+MotorDeRecomendaciones ..> Recomendacion : genera
+MotorDeRecomendaciones ..> Valoracion : analiza
+MotorDeRecomendaciones ..> Amistad : analiza
+MotorDeRecomendaciones ..> Preferencia : analiza
+Recomendacion "*" -- "1" ContenidoAudiovisual
+User "1" -- "*" Recomendacion
+
+@enduml
