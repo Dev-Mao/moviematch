@@ -1,0 +1,32 @@
+@startuml secuencia-cu05
+title Diagrama de secuencia - CU-05 Recibir recomendaciones personalizadas
+skinparam shadowing false
+actor Usuario as U
+boundary "Home" as PH
+control "vista home" as VH
+control "MotorDeRecomendaciones" as MG
+entity "Recomendación" as ER
+entity "Valoración" as EV
+entity "Preferencia" as EP
+entity "Amistad" as EA
+entity "ContenidoAudiovisual" as EC
+
+U -> PH : abre /
+PH -> VH : GET home
+VH -> ER : filter(usuario) -- ¿vigentes?
+alt no hay recomendaciones
+  VH -> MG : generar(usuario)
+  MG -> EV : contenidos ya valorados
+  MG -> EC : candidatos publicados (RN-08, RN-13)
+  MG -> EP : _preferencias() (RN-04)
+  MG -> EV : _afinidad_por_historial()
+  MG -> EA : aceptadas() (RN-07)
+  MG -> EV : valoraciones de amigos
+  loop por cada contenido candidato
+    MG -> MG : score = 0.35 pref + 0.30 amigos\n+ 0.25 historial + 0.10 popularidad
+  end
+  MG -> ER : bulk_create() con score y motivo
+  MG --> VH : recomendaciones
+end
+VH --> PH : render (destacado + filas, < 2 s)
+@enduml

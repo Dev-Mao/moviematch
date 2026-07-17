@@ -1,0 +1,33 @@
+@startuml secuencia-cu02
+title Diagrama de secuencia - CU-02 Iniciar sesión
+skinparam shadowing false
+actor Usuario as U
+boundary "Pantalla de login" as PL
+control "AccesoView" as AV
+entity "LoginForm" as LF
+entity "cache de intentos" as CI
+entity "Usuario (User)" as EU
+entity "Perfil" as EP
+
+U -> PL : ingresa alias/correo y contraseña
+PL -> AV : POST acceder
+AV -> CI : get(intentos)
+alt intentos >= 5 (RN-03)
+  AV --> PL : bloqueo temporal (FE-03)
+else
+  AV -> LF : is_valid()
+  LF -> LF : clean_username() -- resuelve alias o correo
+  LF -> EU : authenticate()
+  LF -> EP : puede_iniciar_sesion() (FE-02)
+  alt credenciales inválidas
+    LF --> AV : error
+    AV -> CI : set(intentos + 1)
+    AV --> PL : credenciales no válidas (FE-01)
+  else acceso correcto
+    LF --> AV : usuario autenticado
+    AV -> CI : delete(intentos)
+    AV -> AV : crea sesión
+    AV --> PL : redirige a Home
+  end
+end
+@enduml

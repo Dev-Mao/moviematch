@@ -1,0 +1,32 @@
+@startuml secuencia-cu07
+title Diagrama de secuencia - CU-07 Gestionar solicitudes de amistad
+skinparam shadowing false
+actor "Usuario" as U
+actor "Destinatario" as D
+boundary "Pantalla de amigos" as PA
+control "enviar_solicitud" as ES
+control "responder_solicitud" as RS
+entity "Amistad" as EA
+entity "Recomendación" as ER
+
+U -> PA : selecciona a un usuario
+PA -> ES : POST enviar_solicitud(usuario_id)
+ES -> EA : filter(entre ambos) -- ¿ya existe? (RN-09)
+alt ya existe
+  ES --> PA : ya tienes una solicitud (FE-01)
+else
+  ES -> EA : create(estado=PENDIENTE)
+  ES --> PA : solicitud enviada
+end
+
+D -> PA : abre solicitudes pendientes
+PA -> RS : POST responder_solicitud(id, accion)
+alt aceptar
+  RS -> EA : aceptar() -- estado=ACEPTADA, fecha
+  RS -> ER : delete() -- recalcular (RN-07)
+  RS --> PA : ahora son amigos
+else rechazar
+  RS -> EA : rechazar() -- estado=RECHAZADA
+  RS --> PA : solicitud rechazada
+end
+@enduml

@@ -1,0 +1,33 @@
+@startuml secuencia-cu01
+title Diagrama de secuencia - CU-01 Registrarse
+skinparam shadowing false
+skinparam sequenceMessageAlign center
+actor Usuario as U
+boundary "Pantalla de registro" as PR
+control "vista registro" as VR
+entity "RegistroForm" as RF
+entity "Usuario (User)" as EU
+entity "Perfil" as EP
+
+U -> PR : abre /registro/
+PR -> VR : GET registro
+VR --> PR : muestra formulario vacío
+
+U -> PR : envía nombre, correo, alias, contraseña
+PR -> VR : POST registro
+VR -> RF : is_valid()
+RF -> EU : filter(email) -- ¿correo único? (RN-01)
+RF -> EP : filter(alias) -- ¿alias único?
+alt datos inválidos
+  RF --> VR : errores
+  VR --> PR : muestra errores (FE-01, FE-02)
+else datos válidos
+  RF --> VR : ok
+  VR -> RF : save()
+  RF -> EU : create(username=alias)
+  RF -> EP : create(estado=ACTIVO)
+  RF --> VR : usuario creado
+  VR -> VR : login(request, usuario)
+  VR --> PR : redirige a /perfil/
+end
+@enduml

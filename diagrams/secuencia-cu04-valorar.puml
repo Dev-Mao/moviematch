@@ -1,0 +1,26 @@
+@startuml secuencia-cu04
+title Diagrama de secuencia - CU-04 Valorar película o serie
+skinparam shadowing false
+actor Usuario as U
+boundary "Ficha de contenido" as FC
+control "vista valorar" as VV
+entity "ContenidoAudiovisual" as EC
+entity "Valoración" as EV
+control "MotorDeRecomendaciones" as MR
+entity "Recomendación" as ER
+
+U -> FC : elige puntuación (1-5) y comentario
+FC -> VV : POST valorar
+VV -> EC : get_object_or_404()
+VV -> EC : esta_publicado ? (FE-02)
+alt contenido retirado
+  VV --> FC : no se puede valorar
+else puntuación fuera de 1-5 (RN-05)
+  VV --> FC : error (FE-01)
+else válido
+  VV -> EV : update_or_create() (RN-06)
+  VV -> ER : delete() -- invalida recomendaciones
+  note right of VV : el motor recalculará\nen la próxima visita al Home
+  VV --> FC : confirma la valoración
+end
+@enduml
