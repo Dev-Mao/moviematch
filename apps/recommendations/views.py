@@ -30,8 +30,8 @@ def home(request):
         )
 
     destacada = recomendaciones[0] if recomendaciones else None
-    para_ti = [r for r in recomendaciones if r.origen != Recomendacion.Origen.AMIGOS][:6]
-    de_amigos = [r for r in recomendaciones if r.origen == Recomendacion.Origen.AMIGOS][:6]
+    para_ti = [r for r in recomendaciones if r.origen != Recomendacion.Origen.AMIGOS][:5]
+    de_amigos = [r for r in recomendaciones if r.origen == Recomendacion.Origen.AMIGOS][:5]
 
     ids_amigos = [
         amistad.otro_usuario(request.user).id
