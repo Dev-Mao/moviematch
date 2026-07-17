@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Métricas · Administración{% endblock %}
+{% block page_title %}Panel de administración{% endblock %}
+{% block page_subtitle %}Métricas de uso agregadas{% endblock %}
+
+{% block topbar_actions %}
+  <form method="get">
+    <select name="periodo" class="input" style="width:auto" onchange="this.form.submit()">
+      {% for valor, etiqueta in periodos %}
+        <option value="{{ valor }}" {% if periodo == valor %}selected{% endif %}>{{ etiqueta }}</option>
+      {% endfor %}
+    </select>
+  </form>
+{% endblock %}
+
+{% block content %}
+
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+    {% for m in metricas %}
+      <div class="card col" style="gap:8px;padding:18px">
+        <div class="row row--between">
+          <span class="muted small">{{ m.clave }}</span>
+          <span>{{ m.icono }}</span>
+        </div>
+        <strong style="font-size:26px;font-family:var(--font-primary)">{{ m.valor }}</strong>
+        <span class="muted small">{{ m.detalle }}</span>
+      </div>
+    {% endfor %}
+  </div>
+
+  <div class="row" style="align-items:stretch;gap:24px">
+
+    <section class="card grow col">
+      <h2 class="card__title">Valoraciones por mes</h2>
+      {% if grafico %}
+        <div class="row" style="align-items:flex-end;gap:16px;height:260px;padding-top:12px">
+          {% for barra in grafico %}
+            <div class="col grow" style="justify-content:flex-end;align-items:center;gap:8px;height:100%">
+              <span class="muted small">{{ barra.total }}</span>
+              <div style="width:100%;height:{{ barra.altura }}%;border-radius:6px 6px 0 0;
+                          background:{% if barra.altura >= 90 %}var(--primary){% else %}var(--secondary){% endif %}"></div>
+              <span class="muted small">{{ barra.etiqueta }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <div class="empty"><p>Sin datos en el periodo seleccionado.</p></div>
+      {% endif %}
+    </section>
+
+    <section class="card" style="width:360px;flex-shrink:0">
+      <h2 class="card__title">Contenido más valorado</h2>
+      {% for c in top_contenido %}
+        <div class="row" style="gap:12px;padding:8px 0">
+          <strong class="muted">{{ forloop.counter }}</strong>
+          <a href="{% url 'catalog:detalle' c.id %}" class="grow small"><strong>{{ c.titulo }}</strong></a>
+          <span class="small"><span class="stars">★</span> {{ c.promedio|floatformat:1 }}</span>
+          <span class="muted small">({{ c.cuantas }})</span>
+        </div>
+      {% empty %}
+        <p class="muted small">Sin valoraciones todavía.</p>
+      {% endfor %}
+    </section>
+
+  </div>
+
+  <p class="muted small">
+    RN-14: todos los indicadores se calculan de forma agregada, sin exponer datos personales individuales.
+  </p>
+
+{% endblock %}

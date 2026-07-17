@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Usuarios · Administración{% endblock %}
+{% block page_title %}Gestión de usuarios{% endblock %}
+{% block page_subtitle %}{{ total }} usuario{{ total|pluralize }} registrado{{ total|pluralize }}{% endblock %}
+
+{% block content %}
+
+  <form method="get" class="row row--wrap">
+    <div class="search grow">
+      <span>🔍</span>
+      <input type="search" name="q" value="{{ busqueda }}" placeholder="Buscar por nombre, alias o correo…">
+    </div>
+    <select name="estado" class="input" style="width:auto" onchange="this.form.submit()">
+      <option value="">Todos los estados</option>
+      {% for valor, etiqueta in estados %}
+        <option value="{{ valor }}" {% if estado == valor %}selected{% endif %}>{{ etiqueta }}</option>
+      {% endfor %}
+    </select>
+    <button type="submit" class="btn btn--primary btn--sm">Filtrar</button>
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Usuario</th>
+        <th>Rol</th>
+        <th>Estado</th>
+        <th>Valoraciones</th>
+        <th>Registro</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for usuario in usuarios %}
+        <tr>
+          <td>
+            <div class="row">
+              <div class="avatar avatar--sm">{{ usuario.perfil.iniciales|default:"?" }}</div>
+              <div>
+                <strong>{{ usuario.get_full_name|default:usuario.username }}</strong>
+                <div class="muted small">{{ usuario.email }}</div>
+              </div>
+            </div>
+          </td>
+          <td>
+            {% if usuario.is_superuser %}Superadministrador
+            {% elif usuario.is_staff %}Moderador
+            {% else %}Usuario{% endif %}
+          </td>
+          <td>
+            {% if usuario.perfil %}
+              <span class="badge">
+                <span class="badge__dot {% if usuario.perfil.estado == 'ACTIVO' %}badge__dot--success{% elif usuario.perfil.estado == 'SUSPENDIDO' %}badge__dot--error{% else %}badge__dot--muted{% endif %}"></span>
+                {{ usuario.perfil.get_estado_display }}
+              </span>
+            {% else %}
+              <span class="muted small">Sin perfil</span>
+            {% endif %}
+          </td>
+          <td>{{ usuario.num_valoraciones }}</td>
+          <td class="muted">{{ usuario.date_joined|date:"d M Y" }}</td>
+          <td>
+            {% if usuario.perfil and usuario != user %}
+              <div class="row" style="gap:6px">
+                {% if usuario.perfil.estado == 'ACTIVO' %}
+                  <form method="post" action="{% url 'accounts:admin_cambiar_estado' usuario.perfil.id 'SUSPENDIDO' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn--danger btn--sm">Suspender</button>
+                  </form>
+                {% else %}
+                  <form method="post" action="{% url 'accounts:admin_cambiar_estado' usuario.perfil.id 'ACTIVO' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn--outline btn--sm">Reactivar</button>
+                  </form>
+                {% endif %}
+              </div>
+            {% endif %}
+          </td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="6" class="muted" style="text-align:center;padding:32px">Sin usuarios que coincidan.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
