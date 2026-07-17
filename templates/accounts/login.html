@@ -1,0 +1,24 @@
+{% extends "base_auth.html" %}
+{% block title %}Iniciar sesión · MovieMatch{% endblock %}
+
+{% block content %}
+  <h1>Bienvenida de vuelta</h1>
+  <p class="lead">Inicia sesión para ver tus recomendaciones.</p>
+
+  <form method="post">
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+      <div class="message message--error" style="margin-bottom:16px">
+        {% for error in form.non_field_errors %}{{ error }}{% endfor %}
+      </div>
+    {% endif %}
+
+    {% for campo in form %}{% include "partials/campo.html" %}{% endfor %}
+
+    <button type="submit" class="btn btn--primary btn--block">Iniciar sesión</button>
+  </form>
+
+  <div class="auth__footer">
+    ¿No tienes cuenta? <a href="{% url 'accounts:registro' %}">Regístrate</a>
+  </div>
+{% endblock %}

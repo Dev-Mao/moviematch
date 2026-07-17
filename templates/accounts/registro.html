@@ -1,0 +1,38 @@
+{% extends "base_auth.html" %}
+{% block title %}Crear cuenta · MovieMatch{% endblock %}
+{% block hero_title %}Crea tu cuenta y empieza a descubrir.{% endblock %}
+{% block hero_text %}Únete a MovieMatch y recibe recomendaciones según tus gustos y los de tus amigos.{% endblock %}
+
+{% block content %}
+  <h1>Crear cuenta</h1>
+  <p class="lead">Es gratis y solo toma un minuto.</p>
+
+  <form method="post">
+    {% csrf_token %}
+    {% if form.non_field_errors %}
+      <div class="message message--error" style="margin-bottom:16px">
+        {% for error in form.non_field_errors %}{{ error }}{% endfor %}
+      </div>
+    {% endif %}
+
+    {% for campo in form %}
+      {% if campo.name == 'acepta_terminos' %}
+        <div class="field">
+          <label class="checkbox">
+            {{ campo }}
+            <span>{{ campo.label }}</span>
+          </label>
+          {% for error in campo.errors %}<div class="field__error">{{ error }}</div>{% endfor %}
+        </div>
+      {% else %}
+        {% include "partials/campo.html" %}
+      {% endif %}
+    {% endfor %}
+
+    <button type="submit" class="btn btn--primary btn--block">Crear cuenta</button>
+  </form>
+
+  <div class="auth__footer">
+    ¿Ya tienes cuenta? <a href="{% url 'accounts:login' %}">Inicia sesión</a>
+  </div>
+{% endblock %}
