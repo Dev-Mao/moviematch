@@ -1,0 +1,42 @@
+{% load static %}<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}MovieMatch{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/moviematch.css' %}">
+</head>
+<body>
+<div class="auth">
+
+  <section class="auth__hero">
+    <a href="{% url 'accounts:login' %}" class="brand" style="margin:0">
+      <span class="brand__mark">🎬</span>
+      <span class="brand__name">MovieMatch</span>
+    </a>
+    <div class="auth__quote">
+      <h2>{% block hero_title %}Encuentra tu próxima película favorita.{% endblock %}</h2>
+      <p>{% block hero_text %}Recomendaciones personalizadas según tus gustos y los de tus amigos.{% endblock %}</p>
+    </div>
+  </section>
+
+  <section class="auth__panel">
+    <div class="auth__form">
+      {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+            <div class="message message--{{ message.tags|default:'info' }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% block content %}{% endblock %}
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

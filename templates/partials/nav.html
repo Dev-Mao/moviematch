@@ -1,0 +1,38 @@
+{% if es_admin %}
+  <a class="nav-item {% if seccion == 'admin_metricas' %}nav-item--active{% endif %}" href="{% url 'analytics:panel' %}">
+    <span class="nav-item__icon">📊</span><span>Métricas</span>
+  </a>
+  <a class="nav-item {% if seccion == 'admin_usuarios' %}nav-item--active{% endif %}" href="{% url 'accounts:admin_usuarios' %}">
+    <span class="nav-item__icon">👥</span><span>Usuarios</span>
+  </a>
+  <a class="nav-item {% if seccion == 'admin_contenido' %}nav-item--active{% endif %}" href="{% url 'catalog:admin_contenido' %}">
+    <span class="nav-item__icon">🎬</span><span>Contenido</span>
+  </a>
+  <a class="nav-item" href="{% url 'recommendations:home' %}">
+    <span class="nav-item__icon">←</span><span>Volver a la app</span>
+  </a>
+{% else %}
+  <a class="nav-item {% if seccion == 'inicio' %}nav-item--active{% endif %}" href="{% url 'recommendations:home' %}">
+    <span class="nav-item__icon">🏠</span><span>Inicio</span>
+  </a>
+  <a class="nav-item {% if seccion == 'buscar' %}nav-item--active{% endif %}" href="{% url 'catalog:catalogo' %}">
+    <span class="nav-item__icon">🔍</span><span>Buscar</span>
+  </a>
+  <a class="nav-item {% if seccion == 'listas' %}nav-item--active{% endif %}" href="{% url 'lists:mis_listas' %}">
+    <span class="nav-item__icon">🔖</span><span>Mis listas</span>
+  </a>
+  <a class="nav-item {% if seccion == 'amigos' %}nav-item--active{% endif %}" href="{% url 'accounts:amigos' %}">
+    <span class="nav-item__icon">👥</span><span>Amigos</span>
+  </a>
+  <a class="nav-item {% if seccion == 'actividad' %}nav-item--active{% endif %}" href="{% url 'ratings:actividad' %}">
+    <span class="nav-item__icon">⚡</span><span>Actividad</span>
+  </a>
+  <a class="nav-item {% if seccion == 'perfil' %}nav-item--active{% endif %}" href="{% url 'accounts:perfil' %}">
+    <span class="nav-item__icon">👤</span><span>Mi perfil</span>
+  </a>
+  {% if user.is_staff %}
+    <a class="nav-item" href="{% url 'analytics:panel' %}">
+      <span class="nav-item__icon">🛡️</span><span>Administración</span>
+    </a>
+  {% endif %}
+{% endif %}

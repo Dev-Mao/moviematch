@@ -1,0 +1,10 @@
+<a class="poster" href="{% url 'catalog:detalle' contenido.id %}">
+  <div class="poster__image">
+    {% if contenido.poster_url %}
+      <img src="{{ contenido.poster_url }}" alt="{{ contenido.titulo }}" loading="lazy">
+    {% endif %}
+    {% if puntaje %}<span class="poster__score">⭐ {{ puntaje|floatformat:1 }}</span>{% endif %}
+  </div>
+  <div class="poster__title">{{ contenido.titulo }}</div>
+  <div class="poster__meta">{{ meta|default:contenido.anio_estreno }}</div>
+</a>
