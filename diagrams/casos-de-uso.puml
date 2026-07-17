@@ -1,0 +1,69 @@
+@startuml casos-de-uso
+title Diagrama de Casos de Uso - MovieMatch
+left to right direction
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+' ====================== ACTORES ======================
+actor "Usuario" as U
+actor "Administrador" as A
+actor "Motor de\nRecomendaciones" as M <<system>>
+
+' Administrador hereda capacidades de Usuario
+A --|> U
+
+rectangle "MovieMatch" {
+
+    ' --- Gestion de cuenta y perfil ---
+    usecase "CU-01 Registrarse" as UC01
+    usecase "CU-02 Iniciar sesion" as UC02
+    usecase "CU-03 Gestionar perfil\ny preferencias" as UC03
+
+    ' --- Interaccion con contenido ---
+    usecase "CU-04 Valorar\npelicula/serie" as UC04
+    usecase "CU-05 Recibir recomendaciones\npersonalizadas" as UC05
+    usecase "CU-06 Buscar/explorar\ncatalogo" as UC06
+
+    ' --- Social ---
+    usecase "CU-07 Gestionar\nsolicitudes de amistad" as UC07
+    usecase "CU-08 Compartir lista\nde recomendaciones" as UC08
+    usecase "CU-09 Ver valoraciones\nde amigos" as UC09
+
+    ' --- Administracion ---
+    usecase "CU-10 Gestionar\nusuarios" as UC10
+    usecase "CU-11 Gestionar\ncontenido" as UC11
+    usecase "CU-12 Consultar\nmetricas de uso" as UC12
+}
+
+' ====================== ASOCIACIONES USUARIO ======================
+U -- UC01
+U -- UC02
+U -- UC03
+U -- UC04
+U -- UC05
+U -- UC06
+U -- UC07
+U -- UC08
+U -- UC09
+
+' ====================== ASOCIACIONES ADMIN ======================
+A -- UC10
+A -- UC11
+A -- UC12
+
+' ====================== ACTOR SISTEMA ======================
+UC05 ..> M : <<include>>
+
+' ====================== INCLUDE / EXTEND ======================
+UC03 ..> UC02 : <<include>>
+UC04 ..> UC02 : <<include>>
+UC05 ..> UC02 : <<include>>
+UC07 ..> UC02 : <<include>>
+UC08 ..> UC02 : <<include>>
+UC09 ..> UC02 : <<include>>
+UC08 ..> UC05 : <<extend>>
+UC09 ..> UC05 : <<extend>>
+UC06 <.. UC04 : <<extend>>
+
+@enduml

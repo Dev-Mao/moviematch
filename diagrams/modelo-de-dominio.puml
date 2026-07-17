@@ -1,0 +1,157 @@
+@startuml modelo-de-dominio
+title Modelo de Dominio - MovieMatch
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam class {
+    BackgroundColor #FDFDFD
+    BorderColor #2C3E50
+    ArrowColor #2C3E50
+}
+hide methods
+
+' ====================== ACTORES / USUARIOS ======================
+class Usuario {
+    - idUsuario : UUID
+    - nombreCompleto : String
+    - email : String
+    - contrasenaHash : String
+    - fechaRegistro : Date
+    - estado : EstadoUsuario
+}
+
+class Administrador {
+    - nivelAcceso : NivelAcceso
+}
+
+class Perfil {
+    - idPerfil : UUID
+    - alias : String
+    - avatarUrl : String
+    - biografia : String
+}
+
+' ====================== PREFERENCIAS / GENEROS ======================
+class Genero {
+    - idGenero : UUID
+    - nombre : String
+}
+
+class Preferencia {
+    - nivelInteres : int
+}
+
+' ====================== CONTENIDO ======================
+abstract class ContenidoAudiovisual {
+    - idContenido : UUID
+    - titulo : String
+    - sinopsis : String
+    - anioEstreno : int
+    - posterUrl : String
+    - clasificacion : String
+}
+
+class Pelicula {
+    - duracionMin : int
+}
+
+class Serie {
+    - numTemporadas : int
+    - numEpisodios : int
+    - enEmision : boolean
+}
+
+' ====================== INTERACCION ======================
+class Valoracion {
+    - idValoracion : UUID
+    - puntuacion : int
+    - comentario : String
+    - fecha : Date
+}
+
+class ListaDeRecomendaciones {
+    - idLista : UUID
+    - nombre : String
+    - descripcion : String
+    - esPublica : boolean
+    - fechaCreacion : Date
+}
+
+class Amistad {
+    - idAmistad : UUID
+    - estado : EstadoAmistad
+    - fechaSolicitud : Date
+    - fechaAceptacion : Date
+}
+
+' ====================== RECOMENDACION / IA ======================
+class MotorDeRecomendaciones {
+    - version : String
+    - algoritmo : String
+}
+
+class Recomendacion {
+    - idRecomendacion : UUID
+    - score : double
+    - motivo : String
+    - fechaGenerada : Date
+}
+
+' ====================== METRICAS ======================
+class MetricaDeUso {
+    - idMetrica : UUID
+    - tipo : String
+    - valor : double
+    - fechaCorte : Date
+}
+
+' ====================== ENUMERACIONES ======================
+enum EstadoUsuario {
+    ACTIVO
+    INACTIVO
+    SUSPENDIDO
+}
+enum EstadoAmistad {
+    PENDIENTE
+    ACEPTADA
+    RECHAZADA
+    BLOQUEADA
+}
+enum NivelAcceso {
+    MODERADOR
+    SUPERADMIN
+}
+
+' ====================== RELACIONES ======================
+Usuario <|-- Administrador
+ContenidoAudiovisual <|-- Pelicula
+ContenidoAudiovisual <|-- Serie
+
+Usuario "1" -- "1" Perfil : posee >
+
+' Preferencias como clase de asociacion Perfil-Genero
+Perfil "1" -- "*" Preferencia
+Preferencia "*" -- "1" Genero
+
+ContenidoAudiovisual "*" -- "*" Genero : clasificado_en >
+
+Usuario "1" -- "*" Valoracion : emite >
+Valoracion "*" -- "1" ContenidoAudiovisual : sobre >
+
+Usuario "1" -- "*" ListaDeRecomendaciones : crea >
+ListaDeRecomendaciones "*" -- "*" ContenidoAudiovisual : contiene >
+
+Usuario "1" -- "*" Amistad : solicita >
+Amistad "*" -- "1" Usuario : destinatario >
+
+Usuario "1" -- "*" Recomendacion : recibe >
+Recomendacion "*" -- "1" ContenidoAudiovisual : sugiere >
+MotorDeRecomendaciones "1" -- "*" Recomendacion : genera >
+MotorDeRecomendaciones ..> Valoracion : analiza
+MotorDeRecomendaciones ..> Amistad : analiza
+
+Administrador "1" -- "*" MetricaDeUso : consulta >
+Administrador ..> ContenidoAudiovisual : gestiona
+Administrador ..> Usuario : gestiona
+
+@enduml
