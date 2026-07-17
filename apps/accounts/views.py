@@ -55,7 +55,11 @@ class AccesoView(LoginView):
 
     def form_valid(self, form):
         cache.delete(_clave_intentos(self.request.POST.get("username", "")))
-        return super().form_valid(form)
+        respuesta = super().form_valid(form)
+        # Si no marca "Recuérdame", la sesión termina al cerrar el navegador.
+        if not self.request.POST.get("recordarme"):
+            self.request.session.set_expiry(0)
+        return respuesta
 
     def form_invalid(self, form):
         identificador = self.request.POST.get("username", "")

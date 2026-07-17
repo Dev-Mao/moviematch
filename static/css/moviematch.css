@@ -427,6 +427,14 @@ img {
   font-weight: 600;
 }
 
+.poster__title,
+.poster__meta {
+  /* Una sola línea con elipsis: mantiene todas las tarjetas a la misma altura. */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .poster__title {
   font-family: var(--font-primary);
   font-size: 14px;
@@ -617,21 +625,42 @@ img {
 /* ------------------------------------------------- Pantallas de acceso */
 
 .auth {
-  display: flex;
   min-height: 100vh;
 }
 
+/* El panel izquierdo queda fijo: no se mueve al hacer scroll del formulario. */
 .auth__hero {
-  width: 45%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 42%;
+  height: 100vh;
   padding: 48px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background:
-    linear-gradient(rgba(14, 17, 23, 0.72), rgba(14, 17, 23, 0.94)),
-    var(--card-elevated);
+  background-color: var(--card-elevated);
   background-size: cover;
   background-position: center;
+  overflow: hidden;
+}
+
+/* Degradado sobre la imagen para que el texto siempre se lea. */
+.auth__hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 17, 23, 0.55) 0%,
+    rgba(14, 17, 23, 0.35) 45%,
+    rgba(14, 17, 23, 0.92) 100%
+  );
+}
+
+.auth__hero > * {
+  position: relative;
+  z-index: 1;
 }
 
 .auth__quote {
@@ -646,13 +675,14 @@ img {
 }
 
 .auth__quote p {
-  color: var(--muted-foreground);
+  color: var(--secondary-foreground);
   font-size: 16px;
   margin: 0;
 }
 
 .auth__panel {
-  flex: 1;
+  margin-left: 42%;
+  min-height: 100vh;
   display: grid;
   place-items: center;
   padding: 48px;
@@ -682,6 +712,79 @@ img {
   color: var(--muted-foreground);
 }
 
+/* Campo con icono dentro, como en los mockups. */
+.field__control {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field__icon {
+  position: absolute;
+  left: 14px;
+  font-size: 15px;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.field__control input {
+  padding-left: 40px;
+}
+
+/* Separador "o continúa con". */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0;
+  color: var(--muted-foreground);
+  font-size: 12px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.social {
+  display: flex;
+  gap: 12px;
+}
+
+.social__btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--foreground);
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.social__btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Fila de "Recuérdame" y "¿Olvidaste tu contraseña?". */
+.auth__options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
 /* ----------------------------------------------------------- Utilidades */
 
 .row { display: flex; align-items: center; gap: 12px; }
@@ -709,6 +812,7 @@ img {
   .sidebar .user-card, .sidebar .nav-spacer { display: none; }
   .nav-item span:not(.nav-item__icon) { display: none; }
   .auth__hero { display: none; }
+  .auth__panel { margin-left: 0; padding: 24px; }
   .content { padding: 20px; }
   .topbar { padding: 16px 20px; flex-wrap: wrap; }
 }

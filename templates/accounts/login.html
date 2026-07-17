@@ -13,10 +13,45 @@
       </div>
     {% endif %}
 
-    {% for campo in form %}{% include "partials/campo.html" %}{% endfor %}
+    <div class="field">
+      <label class="field__label" for="{{ form.username.id_for_label }}">Alias o correo electrónico</label>
+      <div class="field__control">
+        <span class="field__icon">✉</span>
+        {{ form.username }}
+      </div>
+      {% for error in form.username.errors %}<div class="field__error">{{ error }}</div>{% endfor %}
+    </div>
+
+    <div class="field">
+      <label class="field__label" for="{{ form.password.id_for_label }}">Contraseña</label>
+      <div class="field__control">
+        <span class="field__icon">🔒</span>
+        {{ form.password }}
+      </div>
+      {% for error in form.password.errors %}<div class="field__error">{{ error }}</div>{% endfor %}
+    </div>
+
+    <div class="auth__options">
+      <label class="checkbox" style="margin:0">
+        <input type="checkbox" name="recordarme" checked>
+        <span>Recuérdame</span>
+      </label>
+      <span class="muted small">¿Olvidaste tu contraseña?</span>
+    </div>
 
     <button type="submit" class="btn btn--primary btn--block">Iniciar sesión</button>
   </form>
+
+  <div class="divider">o continúa con</div>
+
+  <div class="social">
+    <button type="button" class="social__btn" disabled title="Disponible próximamente">
+      <span>🌐</span> Google
+    </button>
+    <button type="button" class="social__btn" disabled title="Disponible próximamente">
+      <span>🍎</span> Apple
+    </button>
+  </div>
 
   <div class="auth__footer">
     ¿No tienes cuenta? <a href="{% url 'accounts:registro' %}">Regístrate</a>

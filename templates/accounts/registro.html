@@ -1,5 +1,7 @@
 {% extends "base_auth.html" %}
+{% load static %}
 {% block title %}Crear cuenta · MovieMatch{% endblock %}
+{% block hero_image %}{% static 'img/auth-registro.jpg' %}{% endblock %}
 {% block hero_title %}Crea tu cuenta y empieza a descubrir.{% endblock %}
 {% block hero_text %}Únete a MovieMatch y recibe recomendaciones según tus gustos y los de tus amigos.{% endblock %}
 
@@ -25,7 +27,15 @@
           {% for error in campo.errors %}<div class="field__error">{{ error }}</div>{% endfor %}
         </div>
       {% else %}
-        {% include "partials/campo.html" %}
+        <div class="field">
+          <label class="field__label" for="{{ campo.id_for_label }}">{{ campo.label }}</label>
+          <div class="field__control">
+            <span class="field__icon">{% if campo.name == 'email' %}✉{% elif campo.name == 'alias' %}@{% elif 'password' in campo.name %}🔒{% else %}👤{% endif %}</span>
+            {{ campo }}
+          </div>
+          {% if campo.help_text %}<div class="field__help">{{ campo.help_text|safe }}</div>{% endif %}
+          {% for error in campo.errors %}<div class="field__error">{{ error }}</div>{% endfor %}
+        </div>
       {% endif %}
     {% endfor %}
 

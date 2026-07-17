@@ -12,7 +12,8 @@
 <body>
 <div class="auth">
 
-  <section class="auth__hero">
+  <section class="auth__hero"
+           style="background-image:url('{% block hero_image %}{% static 'img/auth-login.jpg' %}{% endblock %}')">
     <a href="{% url 'accounts:login' %}" class="brand" style="margin:0">
       <span class="brand__mark">🎬</span>
       <span class="brand__name">MovieMatch</span>
