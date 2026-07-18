@@ -722,12 +722,17 @@ img {
 .field__icon {
   position: absolute;
   left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
   font-size: 15px;
   opacity: 0.55;
   pointer-events: none;
 }
 
-.field__control input {
+/* Se iguala la especificidad de la regla base (que usa input[type=...])
+   para que el padding izquierdo deje espacio al icono. */
+.field .field__control input[type] {
   padding-left: 40px;
 }
 
