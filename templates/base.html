@@ -26,16 +26,20 @@
     <div class="nav-spacer"></div>
 
     {% if user.is_authenticated %}
-      <div class="user-card">
-        <div class="avatar avatar--sm">{{ user.perfil.iniciales }}</div>
-        <div class="grow">
-          <div class="user-card__name">{{ user.get_full_name|default:user.username }}</div>
-          <a href="{% url 'accounts:perfil' %}" class="user-card__link">Ver perfil</a>
-        </div>
+      <div class="user-panel">
+        <a href="{% url 'accounts:perfil' %}" class="user-card">
+          <div class="avatar avatar--sm">{{ user.perfil.iniciales }}</div>
+          <div class="grow">
+            <div class="user-card__name">{{ user.get_full_name|default:user.username }}</div>
+            <span class="user-card__link">Ver perfil</span>
+          </div>
+        </a>
         <form method="post" action="{% url 'accounts:logout' %}">
           {% csrf_token %}
-          <button type="submit" class="btn btn--sm btn--outline" title="Cerrar sesión"
-                  style="padding:6px 10px;border:none;background:transparent;color:var(--muted-foreground)">⎋</button>
+          <button type="submit" class="btn-logout">
+            <span class="btn-logout__icon" aria-hidden="true">⎋</span>
+            <span>Cerrar sesión</span>
+          </button>
         </form>
       </div>
     {% endif %}

@@ -207,6 +207,12 @@ img {
 .avatar--sm { width: 36px; height: 36px; font-size: 13px; }
 .avatar--lg { width: 80px; height: 80px; font-size: 30px; }
 
+.user-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .user-card {
   display: flex;
   align-items: center;
@@ -214,6 +220,13 @@ img {
   padding: 10px;
   border-radius: var(--radius-s);
   background: var(--card-elevated);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s ease;
+}
+
+.user-card:hover {
+  background: var(--card-hover, rgba(255, 255, 255, 0.06));
 }
 
 .user-card__name {
@@ -223,8 +236,38 @@ img {
 }
 
 .user-card__link {
+  display: block;
   font-size: 11px;
   color: var(--muted-foreground);
+}
+
+.btn-logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-s);
+  background: transparent;
+  color: var(--muted-foreground);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-logout:hover {
+  background: rgba(239, 68, 68, 0.12);
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #f87171;
+}
+
+.btn-logout__icon {
+  font-size: 16px;
+  line-height: 1;
 }
 
 /* ---------------------------------------------------------------- Botones */
