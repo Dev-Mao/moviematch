@@ -9,6 +9,9 @@ Profesor: Albeiro Espinosa Bedoya, Ph.D., M.Sc.
 
 Estudiante: Mariana Agudelo Ospina (Equipo 1)
 
+**Despliegue de la aplicación:** https://maagudeloo.pythonanywhere.com<br>
+**Repositorio en GitHub:** https://github.com/Dev-Mao/moviematch
+
 ## Contenido
 
 1. Metodología ICONIX
