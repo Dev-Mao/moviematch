@@ -7,6 +7,9 @@ usuario con las valoraciones de sus amigos.
 **Profesor:** Albeiro Espinosa Bedoya, Ph.D., M.Sc.
 **Estudiante:** Mariana Agudelo Ospina (Equipo 1)
 
+**Aplicación en línea:** https://maagudeloo.pythonanywhere.com
+(entra con `mariana` / `moviematch2026`; sin necesidad de instalar nada)
+
 ## Descripción
 
 MovieMatch busca resolver la saturación de opciones en las plataformas de
@@ -83,6 +86,27 @@ La aplicación queda disponible en `http://127.0.0.1:8000/`.
 
 Los demás usuarios de prueba (`ana`, `luis`, `sofia`, `diego`, `valentina`,
 `nicolas`, `maria`, `julian`) comparten la misma contraseña.
+
+### Qué revisar
+
+Recorrido sugerido para evaluar los 12 casos de uso (entrando como `mariana`):
+
+1. **Inicio** – recomendaciones personalizadas con la explicación de por qué se
+   sugiere cada título; el botón *Actualizar* las recalcula (CU-05).
+2. **Catálogo** – grid de 60 películas y series con filtros por género y tipo
+   (CU-06); clic en un título abre su ficha de detalle (CU-08).
+3. **Valorar** – en la ficha de detalle, califica con estrellas y observa cómo
+   cambian las recomendaciones al actualizar (CU-04).
+4. **Perfil** – edición de datos y niveles de interés por género 1–5 (CU-03).
+5. **Listas** – crear una lista, agregar y quitar contenido (CU-11, CU-12).
+6. **Amigos** – enviar, aceptar o rechazar solicitudes de amistad (CU-07).
+7. **Actividad** – historial de valoraciones del usuario (CU-09).
+
+Entrando como `admin` se habilita la **gestión** (barra lateral):
+
+- **Usuarios** – activar o suspender cuentas (CU-10).
+- **Contenido** – publicar o retirar películas y series (CU-06 admin).
+- **Métricas** – panel con estadísticas de uso.
 
 ### Regenerar el catálogo desde TMDB (opcional)
 
