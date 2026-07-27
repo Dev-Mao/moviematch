@@ -2,12 +2,12 @@
 
 Guía paso a paso para publicar MovieMatch en la capa gratuita de
 [PythonAnywhere](https://www.pythonanywhere.com/). El nombre de usuario del
-ejemplo es `devmao`; reemplázalo por el tuyo.
+usuario es `maagudeloo`.
 
 ## 1. Crear la cuenta
 
 1. Regístrate en pythonanywhere.com con una cuenta **Beginner** (gratuita).
-2. Tu aplicación quedará en `https://devmao.pythonanywhere.com`.
+2. Tu aplicación quedará en `https://maagudeloo.pythonanywhere.com`.
 
 ## 2. Traer el código
 
@@ -48,10 +48,10 @@ demostración y reúne los archivos estáticos. **No se necesita la API de TMDB.
 
 En la pestaña **Web**, ajusta:
 
-- **Virtualenv:** `/home/devmao/moviematch/venv`
-- **Source code:** `/home/devmao/moviematch`
+- **Virtualenv:** `/home/maagudeloo/moviematch/venv`
+- **Source code:** `/home/maagudeloo/moviematch`
 - **Static files:** agrega un mapeo
-  - URL: `/static/`  →  Directory: `/home/devmao/moviematch/staticfiles`
+  - URL: `/static/`  →  Directory: `/home/maagudeloo/moviematch/staticfiles`
 
 ## 7. Archivo WSGI
 
@@ -61,15 +61,15 @@ Edita el archivo WSGI (enlace en la pestaña **Web**) y reemplaza su contenido p
 import os
 import sys
 
-path = "/home/devmao/moviematch"
+path = "/home/maagudeloo/moviematch"
 if path not in sys.path:
     sys.path.insert(0, path)
 
 os.environ["DJANGO_SETTINGS_MODULE"] = "config.settings"
 os.environ["DJANGO_SECRET_KEY"] = "pega-aqui-una-clave-larga-y-aleatoria"
 os.environ["DJANGO_DEBUG"] = "False"
-os.environ["DJANGO_ALLOWED_HOSTS"] = "devmao.pythonanywhere.com"
-os.environ["DJANGO_CSRF_TRUSTED_ORIGINS"] = "https://devmao.pythonanywhere.com"
+os.environ["DJANGO_ALLOWED_HOSTS"] = "maagudeloo.pythonanywhere.com"
+os.environ["DJANGO_CSRF_TRUSTED_ORIGINS"] = "https://maagudeloo.pythonanywhere.com"
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
@@ -84,7 +84,7 @@ python -c "from django.core.management.utils import get_random_secret_key; print
 ## 8. Publicar
 
 1. Pulsa el botón verde **Reload** en la pestaña **Web**.
-2. Abre `https://devmao.pythonanywhere.com`.
+2. Abre `https://maagudeloo.pythonanywhere.com`.
 3. Inicia sesión con `mariana` / `moviematch2026`, o `admin` para el panel.
 
 ## Actualizar el despliegue
