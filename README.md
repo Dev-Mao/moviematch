@@ -54,28 +54,15 @@ Informe consolidado: `ENTREGABLE-1.pdf`
 - **Diagramas:** PlantUML
 - **Prototipos:** Pencil
 
-## Puesta en marcha
+## Cómo usar la aplicación
 
-```bash
-# 1. Entorno virtual e instalación de dependencias
-python -m venv venv
-venv\Scripts\activate          # En Linux o macOS: source venv/bin/activate
-pip install -r requirements.txt
+La aplicación está desplegada y lista para usar. No requiere instalación: se abre
+directamente en el navegador.
 
-# 2. Base de datos
-python manage.py migrate
+**https://maagudeloo.pythonanywhere.com**
 
-# 3. Catálogo de películas y series
-python manage.py loaddata fixtures/catalogo.json
-
-# 4. Datos de demostración (usuarios, amistades y valoraciones)
-python manage.py seed_demo
-
-# 5. Servidor de desarrollo
-python manage.py runserver
-```
-
-La aplicación queda disponible en `http://127.0.0.1:8000/`.
+Ingresa con una de las cuentas de demostración y sigue el recorrido sugerido en
+"Qué revisar".
 
 ### Cuentas de demostración
 
@@ -107,23 +94,6 @@ Entrando como `admin` se habilita la **gestión** (barra lateral):
 - **Usuarios** – activar o suspender cuentas (CU-10).
 - **Contenido** – publicar o retirar películas y series (CU-06 admin).
 - **Métricas** – panel con estadísticas de uso.
-
-### Regenerar el catálogo desde TMDB (opcional)
-
-El catálogo ya viene cargado en `fixtures/catalogo.json`, por lo que la
-aplicación **no necesita conexión a internet ni credenciales** para funcionar.
-Si quieres reconstruirlo, crea un archivo `.env` en la raíz con tu clave de TMDB
-y ejecuta el comando de importación:
-
-```bash
-# .env  (este archivo no se versiona)
-TMDB_API_KEY=tu_clave_de_tmdb
-```
-
-```bash
-python manage.py import_tmdb --peliculas 45 --series 15
-python manage.py dumpdata catalog --indent 2 --output fixtures/catalogo.json
-```
 
 ## Créditos
 
